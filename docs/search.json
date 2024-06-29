@@ -1,0 +1,366 @@
+[
+  {
+    "objectID": "week2/index.html#history-of-decision-trees",
+    "href": "week2/index.html#history-of-decision-trees",
+    "title": "Classification and Regression Trees",
+    "section": "History of Decision Trees",
+    "text": "History of Decision Trees\n\nlate 1970s - J Ross Quinlan : ID3 (Iterative Dichotomizer)\nearly 1980s - EB Hunt, J Marinm PT Stone: C4.5 (a successpr of ID3)\n1084 - L. Breiman, J. Friedman, R Olshen, C. Stone: CART (Classification and Regression Trees)"
+  },
+  {
+    "objectID": "week2/index.html#model",
+    "href": "week2/index.html#model",
+    "title": "Classification and Regression Trees",
+    "section": "Model",
+    "text": "Model\n\\[Y = f(X_1, X_2,... X_n) + \\epsilon\\] Goal: What is \\(f\\)?"
+  },
+  {
+    "objectID": "week2/index.html#how-do-we-estimate-f",
+    "href": "week2/index.html#how-do-we-estimate-f",
+    "title": "Classification and Regression Trees",
+    "section": "How do we estimate \\(f\\) ?",
+    "text": "How do we estimate \\(f\\) ?\nData-driven methods:\nestimate \\(f\\) using observed data without making explicit assumptions about the functional form of \\(f\\).\nParametric methods:\nestimate \\(f\\) using observed data by making assumptions about the functional form of \\(f\\)."
+  },
+  {
+    "objectID": "week2/index.html#errors",
+    "href": "week2/index.html#errors",
+    "title": "Classification and Regression Trees",
+    "section": "Errors",
+    "text": "Errors\n\nReducible error\nIrreducible error"
+  },
+  {
+    "objectID": "week2/index.html#general-process-of-classification-and-regression",
+    "href": "week2/index.html#general-process-of-classification-and-regression",
+    "title": "Classification and Regression Trees",
+    "section": "General Process of Classification and Regression",
+    "text": "General Process of Classification and Regression\nIn-class diagram"
+  },
+  {
+    "objectID": "week2/index.html#classification-and-regression-trees",
+    "href": "week2/index.html#classification-and-regression-trees",
+    "title": "Classification and Regression Trees",
+    "section": "Classification and Regression Trees",
+    "text": "Classification and Regression Trees\n\nClassification tree - Outcome is categorical\nRegression tree - Outcome is numeric"
+  },
+  {
+    "objectID": "week2/index.html#classification-and-regression-trees-1",
+    "href": "week2/index.html#classification-and-regression-trees-1",
+    "title": "Classification and Regression Trees",
+    "section": "Classification and Regression Trees",
+    "text": "Classification and Regression Trees\n\nCART models work by partitioning the feature space into a number of simple rectangular regions, divided up by axis parallel splits.\nThe splits are logical rules that split feature-space into two non-overlapping subregions."
+  },
+  {
+    "objectID": "week2/index.html#example-feature-space",
+    "href": "week2/index.html#example-feature-space",
+    "title": "Classification and Regression Trees",
+    "section": "Example: Feature space",
+    "text": "Example: Feature space\nFeatures: Sepal Length, Sepal Width\nOutcome: setosa/versicolor"
+  },
+  {
+    "objectID": "week2/index.html#decision-tree",
+    "href": "week2/index.html#decision-tree",
+    "title": "Classification and Regression Trees",
+    "section": "Decision tree",
+    "text": "Decision tree"
+  },
+  {
+    "objectID": "week2/index.html#parts-of-a-decision-tree",
+    "href": "week2/index.html#parts-of-a-decision-tree",
+    "title": "Classification and Regression Trees",
+    "section": "Parts of a decision tree",
+    "text": "Parts of a decision tree\n\nRoot node\nDecision node\nTerminal node/ Leaf node (gives outputs/class assignments)\nSubtree"
+  },
+  {
+    "objectID": "week2/index.html#decision-tree-1",
+    "href": "week2/index.html#decision-tree-1",
+    "title": "Classification and Regression Trees",
+    "section": "Decision tree",
+    "text": "Decision tree"
+  },
+  {
+    "objectID": "week2/index.html#root-node-split",
+    "href": "week2/index.html#root-node-split",
+    "title": "Classification and Regression Trees",
+    "section": "Root node split",
+    "text": "Root node split"
+  },
+  {
+    "objectID": "week2/index.html#root-node-split-decision-node-split---right",
+    "href": "week2/index.html#root-node-split-decision-node-split---right",
+    "title": "Classification and Regression Trees",
+    "section": "Root node split, Decision node split - right",
+    "text": "Root node split, Decision node split - right"
+  },
+  {
+    "objectID": "week2/index.html#root-node-split-decision-node-splits",
+    "href": "week2/index.html#root-node-split-decision-node-splits",
+    "title": "Classification and Regression Trees",
+    "section": "Root node split, Decision node splits",
+    "text": "Root node split, Decision node splits"
+  },
+  {
+    "objectID": "week2/index.html#shallow-decision-tree",
+    "href": "week2/index.html#shallow-decision-tree",
+    "title": "Classification and Regression Trees",
+    "section": "Shallow decision tree",
+    "text": "Shallow decision tree"
+  },
+  {
+    "objectID": "week2/index.html#two-key-ideas-underlying-trees",
+    "href": "week2/index.html#two-key-ideas-underlying-trees",
+    "title": "Classification and Regression Trees",
+    "section": "Two key ideas underlying trees",
+    "text": "Two key ideas underlying trees\n\nRecursive partitioning (for constructing the tree)\nPruning (for cutting the tree back)\nPruning is a useful strategy for avoiding over fitting.\nThere are some alternative methods to avoid over fitting as well."
+  },
+  {
+    "objectID": "week2/index.html#constructing-classification-trees",
+    "href": "week2/index.html#constructing-classification-trees",
+    "title": "Classification and Regression Trees",
+    "section": "Constructing Classification Trees",
+    "text": "Constructing Classification Trees\nRecursive Partitioning\n\nRecursive partitioning splits P-dimensional feature space into nonoverlapping multidimensional rectangles.\nThe division is accomplished recursively (i.e. operating on the results of prior division)"
+  },
+  {
+    "objectID": "week2/index.html#main-questions",
+    "href": "week2/index.html#main-questions",
+    "title": "Classification and Regression Trees",
+    "section": "Main questions",
+    "text": "Main questions\n\nSplitting variable\nWhich attribute/ feature should be placed at the root node?\nWhich features will act as internal nodes?\nSplitting point\nLooking for a split that increases the homogeneity (or “pure” as possible) of the resulting subsets."
+  },
+  {
+    "objectID": "week2/index.html#example",
+    "href": "week2/index.html#example",
+    "title": "Classification and Regression Trees",
+    "section": "Example",
+    "text": "Example\nsplit that increases the homogeneity"
+  },
+  {
+    "objectID": "week2/index.html#example-cont.",
+    "href": "week2/index.html#example-cont.",
+    "title": "Classification and Regression Trees",
+    "section": "Example (cont.)",
+    "text": "Example (cont.)\nsplit that increases the homogeneity ."
+  },
+  {
+    "objectID": "week2/index.html#key-idea",
+    "href": "week2/index.html#key-idea",
+    "title": "Classification and Regression Trees",
+    "section": "Key idea",
+    "text": "Key idea\n\nIteratively split variables into groups\nEvaluate “homogeneity” within each group\nSplit again if necessary"
+  },
+  {
+    "objectID": "week2/index.html#how-does-a-decision-tree-determine-the-best-split",
+    "href": "week2/index.html#how-does-a-decision-tree-determine-the-best-split",
+    "title": "Classification and Regression Trees",
+    "section": "How does a decision tree determine the best split?",
+    "text": "How does a decision tree determine the best split?\nDecision tree uses entropy and information gain to select a feature which gives the best split."
+  },
+  {
+    "objectID": "week2/index.html#measures-of-impurity",
+    "href": "week2/index.html#measures-of-impurity",
+    "title": "Classification and Regression Trees",
+    "section": "Measures of Impurity",
+    "text": "Measures of Impurity\n\nAn impurity measure is a heuristic for selection of the splitting criterion that best separates a given feature space.\nThe two most popular measures\n\nGini index/ Gini impurity\nEntropy measure\nGain ratio"
+  },
+  {
+    "objectID": "week2/index.html#gini-index",
+    "href": "week2/index.html#gini-index",
+    "title": "Classification and Regression Trees",
+    "section": "Gini index",
+    "text": "Gini index\nGini index for rectangle \\(A\\) is defined by\n\\[I(A) = 1- \\sum_{k=1}^mp_k^2\\]\n\\(p_k\\) - proportion of records in rectangle \\(A\\) that belong to class \\(k\\)\n\nGini index takes value 0 when all the records belong to the same class."
+  },
+  {
+    "objectID": "week2/index.html#gini-index-cont",
+    "href": "week2/index.html#gini-index-cont",
+    "title": "Classification and Regression Trees",
+    "section": "Gini index (cont)",
+    "text": "Gini index (cont)\nIn the two-class case Gini index is at peak when \\(p_k = 0.5\\)"
+  },
+  {
+    "objectID": "week2/index.html#entropy-measure",
+    "href": "week2/index.html#entropy-measure",
+    "title": "Classification and Regression Trees",
+    "section": "Entropy measure",
+    "text": "Entropy measure\n\\[entropy(A) = - \\sum_{k=1}^{m}p_k log_2(p_k)\\]"
+  },
+  {
+    "objectID": "week2/index.html#example-1",
+    "href": "week2/index.html#example-1",
+    "title": "Classification and Regression Trees",
+    "section": "Example:",
+    "text": "Example:"
+  },
+  {
+    "objectID": "week2/index.html#finding-the-best-threshold-split",
+    "href": "week2/index.html#finding-the-best-threshold-split",
+    "title": "Classification and Regression Trees",
+    "section": "Finding the best threshold split?",
+    "text": "Finding the best threshold split?\nIn-class demonstration"
+  },
+  {
+    "objectID": "week2/index.html#overfitting-in-decision-trees",
+    "href": "week2/index.html#overfitting-in-decision-trees",
+    "title": "Classification and Regression Trees",
+    "section": "Overfitting in decision trees",
+    "text": "Overfitting in decision trees\n\nOverfitting refers to the condition when the model completely fits the training data but fails to generalize the testing unseen data.\nIf a decision tree is fully grown or when you increase the depth of the decision tree, it may lose some generalization capability.\nPruning is a technique that is used to reduce overfitting. Pruning simplifies a decision tree by removing the weakest rules."
+  },
+  {
+    "objectID": "week2/index.html#stopping-criteria",
+    "href": "week2/index.html#stopping-criteria",
+    "title": "Classification and Regression Trees",
+    "section": "Stopping criteria",
+    "text": "Stopping criteria\n\nTree depth (number of splits)\nMinimum number of records in a terminal node\nMinimum reduction in impurity\nComplexity parameter (\\(CP\\) ) - available in rpart package"
+  },
+  {
+    "objectID": "week2/index.html#pre-pruning-early-stopping",
+    "href": "week2/index.html#pre-pruning-early-stopping",
+    "title": "Classification and Regression Trees",
+    "section": "Pre-pruning (early stopping)",
+    "text": "Pre-pruning (early stopping)\n\nStop the learning algorithm before the tree becomes too complex\nHyperparameters of the decision tree algorithm that can be tuned to get a robust model\n\nmax_depth\nmin_samples_leaf\nmin_samples_split"
+  },
+  {
+    "objectID": "week2/index.html#post-pruning",
+    "href": "week2/index.html#post-pruning",
+    "title": "Classification and Regression Trees",
+    "section": "Post pruning",
+    "text": "Post pruning\nSimplify the tree after the learning algorithm terminates\nThe idea here is to allow the decision tree to grow fully and observe the CP value"
+  },
+  {
+    "objectID": "week2/index.html#simplify-the-tree-after-the-learning-algorithm-terminates",
+    "href": "week2/index.html#simplify-the-tree-after-the-learning-algorithm-terminates",
+    "title": "Classification and Regression Trees",
+    "section": "Simplify the tree after the learning algorithm terminates",
+    "text": "Simplify the tree after the learning algorithm terminates\n\nComplexity of tree is measured by number of leaves.\n\n\\(L(T) = \\text{number of leaf nodes}\\)\n\nThe more leaf nodes you have, the more complexity.\nWe need a balance between complexity and predictive power\n\nTotal cost = measure of fit + measure of complexity"
+  },
+  {
+    "objectID": "week2/index.html#total-cost-measure-of-fit-measure-of-complexity",
+    "href": "week2/index.html#total-cost-measure-of-fit-measure-of-complexity",
+    "title": "Classification and Regression Trees",
+    "section": "Total cost = measure of fit + measure of complexity",
+    "text": "Total cost = measure of fit + measure of complexity\nmeasure of fit: error\nmeasure of complexity: number of leaf nodes (\\(L(T)\\))\n\\(\\text{Total cost } (C(T)) = Error(T) + \\lambda L(T)\\)\nThe parameter \\(\\lambda\\) trade off between complexity and predictive power. The parameter \\(\\lambda\\) is a penalty factor for tree size.\n\\(\\lambda = 0\\): Fully grown decision tree\n\\(\\lambda = \\infty\\): Root node only\n\\(\\lambda\\) between 0 and \\(\\infty\\) balance predictive power and complexity."
+  },
+  {
+    "objectID": "week2/index.html#example-candidate-for-pruning-in-class",
+    "href": "week2/index.html#example-candidate-for-pruning-in-class",
+    "title": "Classification and Regression Trees",
+    "section": "Example: candidate for pruning (in-class)",
+    "text": "Example: candidate for pruning (in-class)"
+  },
+  {
+    "objectID": "week2/index.html#classification-trees---label-of-terminal-node",
+    "href": "week2/index.html#classification-trees---label-of-terminal-node",
+    "title": "Classification and Regression Trees",
+    "section": "Classification trees - label of terminal node",
+    "text": "Classification trees - label of terminal node\n\nlabels are based on majority votes."
+  },
+  {
+    "objectID": "week2/index.html#regression-trees",
+    "href": "week2/index.html#regression-trees",
+    "title": "Classification and Regression Trees",
+    "section": "Regression Trees",
+    "text": "Regression Trees"
+  },
+  {
+    "objectID": "week2/index.html#regression-trees-1",
+    "href": "week2/index.html#regression-trees-1",
+    "title": "Classification and Regression Trees",
+    "section": "Regression Trees",
+    "text": "Regression Trees\nValue of the terminal node: average outcome value of the training records that were in that terminal node.\nYour turn:  Impurity measures for regression tree"
+  },
+  {
+    "objectID": "week2/index.html#decision-trees---advantages",
+    "href": "week2/index.html#decision-trees---advantages",
+    "title": "Classification and Regression Trees",
+    "section": "Decision trees - advantages",
+    "text": "Decision trees - advantages\n\nEasy to interpret\nBetter performance in non-linear setting\nNo feature scaling required"
+  },
+  {
+    "objectID": "week2/index.html#decision-trees---disadvantages",
+    "href": "week2/index.html#decision-trees---disadvantages",
+    "title": "Classification and Regression Trees",
+    "section": "Decision trees - disadvantages",
+    "text": "Decision trees - disadvantages\n\nUnstable: Adding a new data point or little bit of noise can lead to re-generation of the overall tree and all nodes need to be recalculated and recreated.\nNot suitable for large datasets"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 529 2.0 Data Mining",
+    "section": "",
+    "text": "Introduction to data mining\nClassification and Regression Trees"
+  },
+  {
+    "objectID": "index.html#week-1-june-29-2024",
+    "href": "index.html#week-1-june-29-2024",
+    "title": "STA 529 2.0 Data Mining",
+    "section": "",
+    "text": "Introduction to data mining\nClassification and Regression Trees"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Software",
+    "section": "",
+    "text": "Software: R and RStudio\nPackages:\nlibrary(tidyverse)\nlibrary(tidymodels)"
+  },
+  {
+    "objectID": "week1/index.html#apllications",
+    "href": "week1/index.html#apllications",
+    "title": "Introduction to Data Mining",
+    "section": "Apllications",
+    "text": "Apllications\n\nHealthcare: Google Flue Trend (GFT) analysis project\nFraud Detection: Identifying fraudulent transactions by analyzing patterns\nRetail: Understanding purchasing patterns to optimize product placement.\nTelecommunication : Identifying customers likely to leave and targeting retention efforts (Churn Prediction)\nEducation: Student Performance Analysis by predicting student outcomes and identifying at-risk students."
+  },
+  {
+    "objectID": "week1/index.html#steps-in-kdd",
+    "href": "week1/index.html#steps-in-kdd",
+    "title": "Introduction to Data Mining",
+    "section": "Steps in KDD",
+    "text": "Steps in KDD\n\nData Preparation\n\nData cleaning\nData standardization\nData integration\nData transformation\nData selection\n\nData Mining\nPattern/ Model Evaluation\nKnowledge Presentation"
+  },
+  {
+    "objectID": "week1/index.html#data-transformation",
+    "href": "week1/index.html#data-transformation",
+    "title": "Introduction to Data Mining",
+    "section": "Data transformation",
+    "text": "Data transformation\n\nScaling data\nData reduction\nData discretization\nData aggregation"
+  },
+  {
+    "objectID": "week1/index.html#advantages-of-data-preprocessing",
+    "href": "week1/index.html#advantages-of-data-preprocessing",
+    "title": "Introduction to Data Mining",
+    "section": "Advantages of data preprocessing",
+    "text": "Advantages of data preprocessing\n\nImproves data quality\nMask sensitive data\nImprove completeness of data"
+  },
+  {
+    "objectID": "week1/index.html#disadvantages",
+    "href": "week1/index.html#disadvantages",
+    "title": "Introduction to Data Mining",
+    "section": "Disadvantages",
+    "text": "Disadvantages\n\nTime-consuming\nRequire specialized skills and knowledge\nData loss\nHigh cost"
+  },
+  {
+    "objectID": "week1/index.html#diversity-of-data-types",
+    "href": "week1/index.html#diversity-of-data-types",
+    "title": "Introduction to Data Mining",
+    "section": "Diversity of data types",
+    "text": "Diversity of data types\n\nStructured, Semi-structures, Unstructured data\nSpatial, Temporal, Spatio-temporal\nStored vs streaming data"
+  },
+  {
+    "objectID": "week1/index.html#data-mining-tasks",
+    "href": "week1/index.html#data-mining-tasks",
+    "title": "Introduction to Data Mining",
+    "section": "Data Mining Tasks",
+    "text": "Data Mining Tasks\nData mining tasks are generally divided into two major categories:\n\nPredictive tasks\nDescriptive tasks"
+  },
+  {
+    "objectID": "week1/index.html#statistics-vs-data-mining",
+    "href": "week1/index.html#statistics-vs-data-mining",
+    "title": "Introduction to Data Mining",
+    "section": "Statistics vs Data Mining",
+    "text": "Statistics vs Data Mining\nIn-class demo"
+  },
+  {
+    "objectID": "week1/index.html#data-mining-data-science-data-engineering",
+    "href": "week1/index.html#data-mining-data-science-data-engineering",
+    "title": "Introduction to Data Mining",
+    "section": "Data Mining, Data Science, Data Engineering",
+    "text": "Data Mining, Data Science, Data Engineering\nIn-class demo"
+  }
+]
