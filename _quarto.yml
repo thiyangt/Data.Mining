@@ -4,6 +4,7 @@ project:
 
 website:
   title: "STA 529 2.0 Data Mining"
+  site-url: "https://thiyangt.github.io/Data.Mining/"
   navbar:
     left:
       - href: index.qmd
