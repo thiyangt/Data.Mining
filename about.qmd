@@ -1,0 +1,12 @@
+---
+title: "Software"
+---
+
+Software: R and RStudio
+
+Packages:
+
+``` r
+library(tidyverse)
+library(tidymodels)
+```

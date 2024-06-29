@@ -1,0 +1,110 @@
+---
+title: "Introduction to Data Mining"
+subtitle: ""
+author: "Dr. Thiyanga S. Talagala <br/>  Department of Statistics, Faculty of Applied Sciences <br/> University of Sri Jayewardenepura, Sri Lanka"
+format: 
+  revealjs:
+    width: 2000
+    height: 1500
+    margin: 0.1
+    fontsize: 20pt
+    theme: [simple, custom.scss]
+    transition: slide
+    background-transition: fade
+    slide-number: true
+    show-slide-number: all
+    title-slide-attributes: 
+      data-background-color: "#081d58"
+      data-background-image: none
+---
+
+# What is Data Mining?
+
+The process of discovering interesting patterns and knowledge from massive amounts of data.
+
+> What makes a pattern interesting?
+
+
+
+## Apllications
+
+1.  Healthcare: Google Flue Trend (GFT) analysis project
+
+2.  Fraud Detection: Identifying fraudulent transactions by analyzing patterns
+
+3.  Retail: Understanding purchasing patterns to optimize product placement.
+
+4.  Telecommunication : Identifying customers likely to leave and targeting retention efforts (Churn Prediction)
+
+5.  Education: Student Performance Analysis by predicting student outcomes and identifying at-risk students.
+
+# Data Mining vs Knowledge Discovery from Data/ Knowledge Discovery in Databases (KDD)
+
+Data mining is the core step in KDD process.
+
+## Steps in KDD
+
+1. Data Preparation
+    - Data cleaning
+    - Data standardization
+    - Data integration
+    - Data transformation
+    - Data selection
+    
+2. Data Mining
+
+3. Pattern/ Model Evaluation
+
+4. Knowledge Presentation
+
+## Data transformation
+
+1. Scaling data
+
+2. Data reduction
+
+3. Data discretization
+
+4. Data aggregation
+
+## Advantages of data preprocessing
+
+1. Improves data quality
+
+2. Mask sensitive data
+
+3. Improve completeness of data
+
+## Disadvantages
+
+1. Time-consuming
+
+2. Require specialized skills and knowledge
+
+3. Data loss
+
+4. High cost
+
+## Diversity of data types
+
+1. Structured, Semi-structures, Unstructured data
+
+2. Spatial, Temporal, Spatio-temporal
+
+3. Stored vs streaming data
+
+## Data Mining Tasks
+
+Data mining tasks are generally divided into two major categories:
+
+i. Predictive tasks
+
+ii. Descriptive tasks
+
+## Statistics vs Data Mining
+
+In-class demo
+
+## Data Mining, Data Science, Data Engineering
+
+In-class demo

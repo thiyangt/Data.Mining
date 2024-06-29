@@ -1,0 +1,9 @@
+---
+title: "STA 529 2.0 Data Mining"
+---
+
+## Week 1: June 29, 2024
+
+[Introduction to data mining](./week1/index.html)
+
+[Classification and Regression Trees](./week2/index.html)
