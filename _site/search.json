@@ -1,143 +1,10 @@
 [
   {
-    "objectID": "week1/index.html#quarto",
-    "href": "week1/index.html#quarto",
-    "title": "Untitled",
-    "section": "Quarto",
-    "text": "Quarto\nQuarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
-  },
-  {
-    "objectID": "week1/index.html#bullets",
-    "href": "week1/index.html#bullets",
-    "title": "Untitled",
-    "section": "Bullets",
-    "text": "Bullets\nWhen you click the Render button a document will be generated that includes:\n\nContent authored with markdown\nOutput from executable code"
-  },
-  {
-    "objectID": "week1/index.html#code",
-    "href": "week1/index.html#code",
-    "title": "Untitled",
-    "section": "Code",
-    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2"
-  },
-  {
-    "objectID": "week1/index.html#what-is-data-mining",
-    "href": "week1/index.html#what-is-data-mining",
-    "title": "Introduction to Data Mining",
-    "section": "What is Data Mining?",
-    "text": "What is Data Mining?\nThe process of discovering interesting patterns and knowledge from masive amounts of data."
-  },
-  {
-    "objectID": "week1/index.html#apllications",
-    "href": "week1/index.html#apllications",
-    "title": "Introduction to Data Mining",
-    "section": "Apllications",
-    "text": "Apllications\n\nHealthcare: Google Flue Trend (GFT) analysis project\nFraud Detection: Identifying fraudulent transactions by analyzing patterns\nRetail: Understanding purchasing patterns to optimize product placement.\nTelecommunication : Identifying customers likely to leave and targeting retention efforts (Churn Prediction)\nEducation: Student Performance Analysis by predicting student outcomes and identifying at-risk students."
-  },
-  {
-    "objectID": "week1/index.html#steps-in-kdd",
-    "href": "week1/index.html#steps-in-kdd",
-    "title": "Introduction to Data Mining",
-    "section": "Steps in KDD",
-    "text": "Steps in KDD\n\nData Preparation\n\nData cleaning\nData standardization\nData integration\nData transformation\nData selection\n\nData Mining\nPattern/ Model Evaluation\nKnowledge Presentation"
-  },
-  {
-    "objectID": "week1/index.html#data-mining-vs-knowledge-discovery-from-data-knowledge-discovery-in-databases-kdd",
-    "href": "week1/index.html#data-mining-vs-knowledge-discovery-from-data-knowledge-discovery-in-databases-kdd",
-    "title": "Introduction to Data Mining",
-    "section": "Data Mining vs Knowledge Discovery from Data/ Knowledge Discovery in Databases (KDD)",
-    "text": "Data Mining vs Knowledge Discovery from Data/ Knowledge Discovery in Databases (KDD)\nData mining is the core step in KDD process."
-  },
-  {
-    "objectID": "week1/index.html#data-transformation",
-    "href": "week1/index.html#data-transformation",
-    "title": "Introduction to Data Mining",
-    "section": "Data transformation",
-    "text": "Data transformation\n\nScaling data\nData reduction\nData discretization\nData aggregation"
-  },
-  {
-    "objectID": "week1/index.html#advantages-of-data-preprocessing",
-    "href": "week1/index.html#advantages-of-data-preprocessing",
-    "title": "Introduction to Data Mining",
-    "section": "Advantages of data preprocessing",
-    "text": "Advantages of data preprocessing\n\nImproves data quality\nMask sensitive data\nImprove completeness of data"
-  },
-  {
-    "objectID": "week1/index.html#disadvantages",
-    "href": "week1/index.html#disadvantages",
-    "title": "Introduction to Data Mining",
-    "section": "Disadvantages",
-    "text": "Disadvantages\n\nTime-consuming\nRequire specialized skills and knowledge\nData loss\nHigh cost"
-  },
-  {
-    "objectID": "week1/index.html#diversity-of-data-types",
-    "href": "week1/index.html#diversity-of-data-types",
-    "title": "Introduction to Data Mining",
-    "section": "Diversity of data types",
-    "text": "Diversity of data types\n\nStructured, Semi-structures, Unstructured data\nSpatial, Temporal, Spatio-temporal\nStored vs streaming data"
-  },
-  {
-    "objectID": "week1/index.html#data-mining-tasks",
-    "href": "week1/index.html#data-mining-tasks",
-    "title": "Introduction to Data Mining",
-    "section": "Data Mining Tasks",
-    "text": "Data Mining Tasks\nData mining tasks are generally divided into two major categories:\n\nPredictive tasks\nDescriptive tasks"
-  },
-  {
-    "objectID": "week1/index.html#what-makes-a-pattern-interesting",
-    "href": "week1/index.html#what-makes-a-pattern-interesting",
-    "title": "Introduction to Data Mining",
-    "section": "What makes a pattern interesting?",
-    "text": "What makes a pattern interesting?\n\nThe process of discovering interesting patterns and knowledge from massive amounts of data."
-  },
-  {
-    "objectID": "week1/index.html#statistics-vs-data-mining",
-    "href": "week1/index.html#statistics-vs-data-mining",
-    "title": "Introduction to Data Mining",
-    "section": "Statistics vs Data Mining",
-    "text": "Statistics vs Data Mining\nIn-class demo"
-  },
-  {
-    "objectID": "week1/index.html#data-mining-data-science-data-engineering",
-    "href": "week1/index.html#data-mining-data-science-data-engineering",
-    "title": "Introduction to Data Mining",
-    "section": "Data Mining, Data Science, Data Engineering",
-    "text": "Data Mining, Data Science, Data Engineering\nIn-class demo"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STA 529 2.0 Data Mining",
-    "section": "",
-    "text": "Introduction to data mining\nClassification and Regression Trees"
-  },
-  {
-    "objectID": "index.html#week-1",
-    "href": "index.html#week-1",
-    "title": "STA 529 2.0 Data Mining",
-    "section": "",
-    "text": "Introduction to data mining\nClassification and Regression"
-  },
-  {
-    "objectID": "index.html#week-2",
-    "href": "index.html#week-2",
-    "title": "STA 529 2.0 Data Mining",
-    "section": "Week 2",
-    "text": "Week 2\nIntroduction to data mining"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Software",
-    "section": "",
-    "text": "Software: R and RStudio\nPackages:\nlibrary(tidyverse)\nlibrary(tidymodels)"
-  },
-  {
-    "objectID": "index.html#week-1-june-29-2024",
-    "href": "index.html#week-1-june-29-2024",
-    "title": "STA 529 2.0 Data Mining",
-    "section": "",
-    "text": "Introduction to data mining\nClassification and Regression Trees"
+    "objectID": "week2/index.html#history-of-decision-trees",
+    "href": "week2/index.html#history-of-decision-trees",
+    "title": "Classification and Regression Trees",
+    "section": "History of Decision Trees",
+    "text": "History of Decision Trees\n\nlate 1970s - J Ross Quinlan : ID3 (Iterative Dichotomizer)\nearly 1980s - EB Hunt, J Marinm PT Stone: C4.5 (a successpr of ID3)\n1084 - L. Breiman, J. Friedman, R Olshen, C. Stone: CART (Classification and Regression Trees)"
   },
   {
     "objectID": "week2/index.html#model",
@@ -152,6 +19,20 @@
     "title": "Classification and Regression Trees",
     "section": "How do we estimate \\(f\\) ?",
     "text": "How do we estimate \\(f\\) ?\nData-driven methods:\nestimate \\(f\\) using observed data without making explicit assumptions about the functional form of \\(f\\).\nParametric methods:\nestimate \\(f\\) using observed data by making assumptions about the functional form of \\(f\\)."
+  },
+  {
+    "objectID": "week2/index.html#errors",
+    "href": "week2/index.html#errors",
+    "title": "Classification and Regression Trees",
+    "section": "Errors",
+    "text": "Errors\n\nReducible error\nIrreducible error"
+  },
+  {
+    "objectID": "week2/index.html#general-process-of-classification-and-regression",
+    "href": "week2/index.html#general-process-of-classification-and-regression",
+    "title": "Classification and Regression Trees",
+    "section": "General Process of Classification and Regression",
+    "text": "General Process of Classification and Regression\nIn-class diagram"
   },
   {
     "objectID": "week2/index.html#classification-and-regression-trees",
@@ -187,13 +68,6 @@
     "title": "Classification and Regression Trees",
     "section": "Parts of a decision tree",
     "text": "Parts of a decision tree\n\nRoot node\nDecision node\nTerminal node/ Leaf node (gives outputs/class assignments)\nSubtree"
-  },
-  {
-    "objectID": "week2/index.html#section",
-    "href": "week2/index.html#section",
-    "title": "Classification and Regression Trees",
-    "section": "",
-    "text": "Image source: https://www.tutorialandexample.com/wp-content/uploads/2019/10/Decision-Trees-Root-Node.png"
   },
   {
     "objectID": "week2/index.html#decision-tree-1",
@@ -236,13 +110,6 @@
     "title": "Classification and Regression Trees",
     "section": "Two key ideas underlying trees",
     "text": "Two key ideas underlying trees\n\nRecursive partitioning (for constructing the tree)\nPruning (for cutting the tree back)\nPruning is a useful strategy for avoiding over fitting.\nThere are some alternative methods to avoid over fitting as well."
-  },
-  {
-    "objectID": "week2/index.html#leo-breiman",
-    "href": "week2/index.html#leo-breiman",
-    "title": "Classification and Regression Trees",
-    "section": "Leo Breiman",
-    "text": "Leo Breiman\nKey references\nBreiman, L., J. Friedman, R. Olshen, and C. Stone, 1984: Classification and regression trees. Wadsworth Books, 358.\nBreiman, L., 1996: Bagging predictors. Machine learning, 24 (2), 123–140.\nBreiman, Leo (2001). “Random Forests”. Machine Learning 45 (1): 5–32. doi:10.1023/A: 1010933404324"
   },
   {
     "objectID": "week2/index.html#constructing-classification-trees",
@@ -315,18 +182,11 @@
     "text": "Entropy measure\n\\[entropy(A) = - \\sum_{k=1}^{m}p_k log_2(p_k)\\]"
   },
   {
-    "objectID": "week2/index.html#example-calculation-left",
-    "href": "week2/index.html#example-calculation-left",
+    "objectID": "week2/index.html#example-1",
+    "href": "week2/index.html#example-1",
     "title": "Classification and Regression Trees",
-    "section": "Example: Calculation (left)",
-    "text": "Example: Calculation (left)"
-  },
-  {
-    "objectID": "week2/index.html#example-calculation-right-cont.",
-    "href": "week2/index.html#example-calculation-right-cont.",
-    "title": "Classification and Regression Trees",
-    "section": "Example: calculation (right) (cont.)",
-    "text": "Example: calculation (right) (cont.)"
+    "section": "Example:",
+    "text": "Example:"
   },
   {
     "objectID": "week2/index.html#finding-the-best-threshold-split",
@@ -420,38 +280,87 @@
     "text": "Decision trees - disadvantages\n\nUnstable: Adding a new data point or little bit of noise can lead to re-generation of the overall tree and all nodes need to be recalculated and recreated.\nNot suitable for large datasets"
   },
   {
-    "objectID": "week2/index.html#example-1",
-    "href": "week2/index.html#example-1",
-    "title": "Classification and Regression Trees",
-    "section": "Example:",
-    "text": "Example:"
-  },
-  {
-    "objectID": "week2/index.html#errors",
-    "href": "week2/index.html#errors",
-    "title": "Classification and Regression Trees",
-    "section": "Errors",
-    "text": "Errors\n\nReducible error\nIrreducible error"
-  },
-  {
-    "objectID": "week2/index.html#general-process-of-classification-and-regression",
-    "href": "week2/index.html#general-process-of-classification-and-regression",
-    "title": "Classification and Regression Trees",
-    "section": "General Process of Classification and Regression",
-    "text": "General Process of Classification and Regression\nIn-class diagram"
-  },
-  {
-    "objectID": "week2/index.html#history-of-decision-trees",
-    "href": "week2/index.html#history-of-decision-trees",
-    "title": "Classification and Regression Trees",
-    "section": "History of Decision Trees",
-    "text": "History of Decision Trees\n\nlate 1970s - J Ross Quinlan : ID3 (Iterative Dichotomizer)\nearly 1980s - EB Hunt, J Marinm PT Stone: C4.5 (a successpr of ID3)\n1084 - L. Breiman, J. Friedman, R Olshen, C. Stone: CART (Classification and Regression Trees)"
-  },
-  {
-    "objectID": "week2/index.html",
-    "href": "week2/index.html",
-    "title": "Classification and Regression Trees",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 529 2.0 Data Mining",
     "section": "",
-    "text": "Decision trees\nSupervised learning method\nData driven method\n\n\n\n\nlate 1970s - J Ross Quinlan : ID3 (Iterative Dichotomizer)\nearly 1980s - EB Hunt, J Marinm PT Stone: C4.5 (a successpr of ID3)\n1084 - L. Breiman, J. Friedman, R Olshen, C. Stone: CART (Classification and Regression Trees)\n\n\n\n\n\\[Y = f(X_1, X_2,... X_n) + \\epsilon\\] Goal: What is \\(f\\)?\n\n\n\nData-driven methods:\nestimate \\(f\\) using observed data without making explicit assumptions about the functional form of \\(f\\).\nParametric methods:\nestimate \\(f\\) using observed data by making assumptions about the functional form of \\(f\\).\n\n\n\n\nReducible error\nIrreducible error\n\n\n\n\nIn-class diagram\n\n\n\n\nClassification tree - Outcome is categorical\nRegression tree - Outcome is numeric\n\n\n\n\n\nCART models work by partitioning the feature space into a number of simple rectangular regions, divided up by axis parallel splits.\nThe splits are logical rules that split feature-space into two non-overlapping subregions.\n\n\n\n\nFeatures: Sepal Length, Sepal Width\nOutcome: setosa/versicolor\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRoot node\nDecision node\nTerminal node/ Leaf node (gives outputs/class assignments)\nSubtree\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRecursive partitioning (for constructing the tree)\nPruning (for cutting the tree back)\nPruning is a useful strategy for avoiding over fitting.\nThere are some alternative methods to avoid over fitting as well.\n\n\n\n\nRecursive Partitioning\n\nRecursive partitioning splits P-dimensional feature space into nonoverlapping multidimensional rectangles.\nThe division is accomplished recursively (i.e. operating on the results of prior division)\n\n\n\n\n\nSplitting variable\nWhich attribute/ feature should be placed at the root node?\nWhich features will act as internal nodes?\nSplitting point\nLooking for a split that increases the homogeneity (or “pure” as possible) of the resulting subsets.\n\n\n\n\nsplit that increases the homogeneity\n\n\n\n\n\n\n\n\n\n\n\n\nsplit that increases the homogeneity .\n\n\n\n\n\n\n\n\n\n\n\n\n\nIteratively split variables into groups\nEvaluate “homogeneity” within each group\nSplit again if necessary\n\n\n\n\nDecision tree uses entropy and information gain to select a feature which gives the best split.\n\n\n\n\nAn impurity measure is a heuristic for selection of the splitting criterion that best separates a given feature space.\nThe two most popular measures\n\nGini index/ Gini impurity\nEntropy measure\nGain ratio\n\n\n\n\n\nGini index for rectangle \\(A\\) is defined by\n\\[I(A) = 1- \\sum_{k=1}^mp_k^2\\]\n\\(p_k\\) - proportion of records in rectangle \\(A\\) that belong to class \\(k\\)\n\nGini index takes value 0 when all the records belong to the same class.\n\n\n\n\nIn the two-class case Gini index is at peak when \\(p_k = 0.5\\)\n\n\n\n\\[entropy(A) = - \\sum_{k=1}^{m}p_k log_2(p_k)\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIn-class demonstration\n\n\n\n\nOverfitting refers to the condition when the model completely fits the training data but fails to generalize the testing unseen data.\nIf a decision tree is fully grown or when you increase the depth of the decision tree, it may lose some generalization capability.\nPruning is a technique that is used to reduce overfitting. Pruning simplifies a decision tree by removing the weakest rules.\n\n\n\n\n\nTree depth (number of splits)\nMinimum number of records in a terminal node\nMinimum reduction in impurity\nComplexity parameter (\\(CP\\) ) - available in rpart package\n\n\n\n\n\nStop the learning algorithm before the tree becomes too complex\nHyperparameters of the decision tree algorithm that can be tuned to get a robust model\n\nmax_depth\nmin_samples_leaf\nmin_samples_split\n\n\n\nSimplify the tree after the learning algorithm terminates\nThe idea here is to allow the decision tree to grow fully and observe the CP value\n\n\n\n\nComplexity of tree is measured by number of leaves.\n\n\\(L(T) = \\text{number of leaf nodes}\\)\n\nThe more leaf nodes you have, the more complexity.\nWe need a balance between complexity and predictive power\n\nTotal cost = measure of fit + measure of complexity\n\n\n\nmeasure of fit: error\nmeasure of complexity: number of leaf nodes (\\(L(T)\\))\n\\(\\text{Total cost } (C(T)) = Error(T) + \\lambda L(T)\\)\nThe parameter \\(\\lambda\\) trade off between complexity and predictive power. The parameter \\(\\lambda\\) is a penalty factor for tree size.\n\\(\\lambda = 0\\): Fully grown decision tree\n\\(\\lambda = \\infty\\): Root node only\n\\(\\lambda\\) between 0 and \\(\\infty\\) balance predictive power and complexity.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlabels are based on majority votes.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nValue of the terminal node: average outcome value of the training records that were in that terminal node.\nYour turn:  Impurity measures for regression tree\n\n\n\n\nEasy to interpret\nBetter performance in non-linear setting\nNo feature scaling required\n\n\n\n\n\nUnstable: Adding a new data point or little bit of noise can lead to re-generation of the overall tree and all nodes need to be recalculated and recreated.\nNot suitable for large datasets"
+    "text": "Introduction to data mining\nClassification and Regression Trees"
+  },
+  {
+    "objectID": "index.html#week-1-june-29-2024",
+    "href": "index.html#week-1-june-29-2024",
+    "title": "STA 529 2.0 Data Mining",
+    "section": "",
+    "text": "Introduction to data mining\nClassification and Regression Trees"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Software",
+    "section": "",
+    "text": "Software: R and RStudio\nPackages:\nlibrary(tidyverse)\nlibrary(tidymodels)"
+  },
+  {
+    "objectID": "week1/index.html#apllications",
+    "href": "week1/index.html#apllications",
+    "title": "Introduction to Data Mining",
+    "section": "Apllications",
+    "text": "Apllications\n\nHealthcare: Google Flue Trend (GFT) analysis project\nFraud Detection: Identifying fraudulent transactions by analyzing patterns\nRetail: Understanding purchasing patterns to optimize product placement.\nTelecommunication : Identifying customers likely to leave and targeting retention efforts (Churn Prediction)\nEducation: Student Performance Analysis by predicting student outcomes and identifying at-risk students."
+  },
+  {
+    "objectID": "week1/index.html#steps-in-kdd",
+    "href": "week1/index.html#steps-in-kdd",
+    "title": "Introduction to Data Mining",
+    "section": "Steps in KDD",
+    "text": "Steps in KDD\n\nData Preparation\n\nData cleaning\nData standardization\nData integration\nData transformation\nData selection\n\nData Mining\nPattern/ Model Evaluation\nKnowledge Presentation"
+  },
+  {
+    "objectID": "week1/index.html#data-transformation",
+    "href": "week1/index.html#data-transformation",
+    "title": "Introduction to Data Mining",
+    "section": "Data transformation",
+    "text": "Data transformation\n\nScaling data\nData reduction\nData discretization\nData aggregation"
+  },
+  {
+    "objectID": "week1/index.html#advantages-of-data-preprocessing",
+    "href": "week1/index.html#advantages-of-data-preprocessing",
+    "title": "Introduction to Data Mining",
+    "section": "Advantages of data preprocessing",
+    "text": "Advantages of data preprocessing\n\nImproves data quality\nMask sensitive data\nImprove completeness of data"
+  },
+  {
+    "objectID": "week1/index.html#disadvantages",
+    "href": "week1/index.html#disadvantages",
+    "title": "Introduction to Data Mining",
+    "section": "Disadvantages",
+    "text": "Disadvantages\n\nTime-consuming\nRequire specialized skills and knowledge\nData loss\nHigh cost"
+  },
+  {
+    "objectID": "week1/index.html#diversity-of-data-types",
+    "href": "week1/index.html#diversity-of-data-types",
+    "title": "Introduction to Data Mining",
+    "section": "Diversity of data types",
+    "text": "Diversity of data types\n\nStructured, Semi-structures, Unstructured data\nSpatial, Temporal, Spatio-temporal\nStored vs streaming data"
+  },
+  {
+    "objectID": "week1/index.html#data-mining-tasks",
+    "href": "week1/index.html#data-mining-tasks",
+    "title": "Introduction to Data Mining",
+    "section": "Data Mining Tasks",
+    "text": "Data Mining Tasks\nData mining tasks are generally divided into two major categories:\n\nPredictive tasks\nDescriptive tasks"
+  },
+  {
+    "objectID": "week1/index.html#statistics-vs-data-mining",
+    "href": "week1/index.html#statistics-vs-data-mining",
+    "title": "Introduction to Data Mining",
+    "section": "Statistics vs Data Mining",
+    "text": "Statistics vs Data Mining\nIn-class demo"
+  },
+  {
+    "objectID": "week1/index.html#data-mining-data-science-data-engineering",
+    "href": "week1/index.html#data-mining-data-science-data-engineering",
+    "title": "Introduction to Data Mining",
+    "section": "Data Mining, Data Science, Data Engineering",
+    "text": "Data Mining, Data Science, Data Engineering\nIn-class demo"
   }
 ]
