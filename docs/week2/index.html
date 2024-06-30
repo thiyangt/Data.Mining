@@ -400,6 +400,25 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
 <h2>Decision tree</h2>
 
 <img data-src="index_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>n= 100 
+
+node), split, n, loss, yval, (yprob)
+      * denotes terminal node
+
+1) root 100 50 setosa (0.50000000 0.50000000)  
+  2) Sepal.Length&lt; 5.45 51  6 setosa (0.88235294 0.11764706)  
+    4) Sepal.Width&gt;=2.95 44  1 setosa (0.97727273 0.02272727) *
+    5) Sepal.Width&lt; 2.95 7  2 versicolor (0.28571429 0.71428571) *
+  3) Sepal.Length&gt;=5.45 49  5 versicolor (0.10204082 0.89795918)  
+    6) Sepal.Width&gt;=3.25 7  2 setosa (0.71428571 0.28571429) *
+    7) Sepal.Width&lt; 3.25 42  0 versicolor (0.00000000 1.00000000) *</code></pre>
+</div>
+</div>
+</section>
 <section id="parts-of-a-decision-tree" class="slide level2">
 <h2>Parts of a decision tree</h2>
 <ul>
@@ -412,23 +431,23 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
 <section id="decision-tree-1" class="slide level2">
 <h2>Decision tree</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 <section id="root-node-split" class="slide level2">
 <h2>Root node split</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
 <section id="root-node-split-decision-node-split---right" class="slide level2">
 <h2>Root node split, Decision node split - right</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
 <section id="root-node-split-decision-node-splits" class="slide level2">
 <h2>Root node split, Decision node splits</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
 <section id="shallow-decision-tree" class="slide level2">
 <h2>Shallow decision tree</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
 <section id="two-key-ideas-underlying-trees" class="slide level2">
 <h2>Two key ideas underlying trees</h2>
 <ul>
@@ -460,12 +479,12 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
 <h2>Example</h2>
 <p>split that increases the homogeneity</p>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
 <section id="example-cont." class="slide level2">
 <h2>Example (cont.)</h2>
 <p>split that increases the homogeneity .</p>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
 <section id="key-idea" class="slide level2">
 <h2>Key idea</h2>
 <ol type="1">
@@ -510,7 +529,7 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
 <section id="example-1" class="slide level2">
 <h2>Example:</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
 <section id="finding-the-best-threshold-split" class="slide level2">
 <h2>Finding the best threshold split?</h2>
 <p>In-class demonstration</p>
@@ -572,7 +591,7 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
 <section id="example-candidate-for-pruning-in-class" class="slide level2">
 <h2>Example: candidate for pruning (in-class)</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
 <section id="classification-trees---label-of-terminal-node" class="slide level2">
 <h2>Classification trees - label of terminal node</h2>
 
@@ -581,11 +600,11 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
 <section id="regression-trees" class="slide level2">
 <h2>Regression Trees</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
 <section id="regression-trees-1" class="slide level2">
 <h2>Regression Trees</h2>
 <p>Value of the terminal node: average outcome value of the training records that were in that terminal node.</p>
-<p><strong>Your turn: </strong> Impurity measures for regression tree</p>
+<p><strong>Your turn:</strong> Impurity measures for regression tree</p>
 </section>
 <section id="decision-trees---advantages" class="slide level2">
 <h2>Decision trees - advantages</h2>

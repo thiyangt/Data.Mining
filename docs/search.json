@@ -63,6 +63,13 @@
     "text": "Decision tree"
   },
   {
+    "objectID": "week2/index.html#section",
+    "href": "week2/index.html#section",
+    "title": "Classification and Regression Trees",
+    "section": "",
+    "text": "n= 100 \n\nnode), split, n, loss, yval, (yprob)\n      * denotes terminal node\n\n1) root 100 50 setosa (0.50000000 0.50000000)  \n  2) Sepal.Length&lt; 5.45 51  6 setosa (0.88235294 0.11764706)  \n    4) Sepal.Width&gt;=2.95 44  1 setosa (0.97727273 0.02272727) *\n    5) Sepal.Width&lt; 2.95 7  2 versicolor (0.28571429 0.71428571) *\n  3) Sepal.Length&gt;=5.45 49  5 versicolor (0.10204082 0.89795918)  \n    6) Sepal.Width&gt;=3.25 7  2 setosa (0.71428571 0.28571429) *\n    7) Sepal.Width&lt; 3.25 42  0 versicolor (0.00000000 1.00000000) *"
+  },
+  {
     "objectID": "week2/index.html#parts-of-a-decision-tree",
     "href": "week2/index.html#parts-of-a-decision-tree",
     "title": "Classification and Regression Trees",
@@ -263,7 +270,7 @@
     "href": "week2/index.html#regression-trees-1",
     "title": "Classification and Regression Trees",
     "section": "Regression Trees",
-    "text": "Regression Trees\nValue of the terminal node: average outcome value of the training records that were in that terminal node.\nYour turn:  Impurity measures for regression tree"
+    "text": "Regression Trees\nValue of the terminal node: average outcome value of the training records that were in that terminal node.\nYour turn: Impurity measures for regression tree"
   },
   {
     "objectID": "week2/index.html#decision-trees---advantages",
