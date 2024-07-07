@@ -1,0 +1,242 @@
+---
+title: "Measuring Performance"
+subtitle: ""
+author: "Dr. Thiyanga S. Talagala <br/>  Department of Statistics, Faculty of Applied Sciences <br/> University of Sri Jayewardenepura, Sri Lanka"
+format: 
+  revealjs:
+    width: 2000
+    height: 1500
+    margin: 0.1
+    fontsize: 20pt
+    theme: [simple, custom.scss]
+    transition: slide
+    background-transition: fade
+    slide-number: true
+    show-slide-number: all
+    title-slide-attributes: 
+      data-background-color: "#081d58"
+      data-background-image: none
+---
+
+# Measures for Regression
+
+## Loss function
+
+- Function that calculates loss for a single data point
+
+$e_i = y - \hat{y}$
+
+$e_i^2 = (y - \hat{y})^2$
+
+## Cost function
+
+- Calculates loss for the entire data sets 
+
+$$ME = \frac{1}{n}\sum_{i=1}^n e_i$$
+
+# Numeric outcome: Evaluations
+
+## Prediction accuracy measures (cost functions)
+
+Mean Error
+
+$$ME = \frac{1}{n}\sum_{i=1}^n e_i$$
+
+
+- Error can be both negative and positive. So they can cancel each other during the summation.
+
+## Mean Absolute Error (L1 loss)
+
+$$MAE = \frac{1}{n}\sum_{i=1}^n |e_i|$$
+
+##  Mean Squared Error (L2 loss)
+
+$$MSE = \frac{1}{n}\sum_{i=1}^n e^2_i$$
+
+
+## Mean Percentage Error
+
+$$MPE = \frac{1}{n}\sum_{i=1}^n \frac{e_i}{y_i}$$
+
+
+## Mean Absolute Percentage Error
+
+$$MAPE = \frac{1}{n}\sum_{i=1}^n |\frac{e_i}{y_i}|$$
+
+
+
+
+## Root Mean Squared Error
+
+$$RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^n e^2_i}$$
+
+
+## Visualizaion of error distribution
+
+Graphical representations reveal more than metrics alone.
+
+## Accuracy Measures on Training Set vs Test Set
+
+Accuracy measure on training set: Tells about the model fit
+
+
+Accuracy measure on test set: Model ability to predict new data
+
+
+## Evaluate Classifier Against Benchmark
+
+Naive approach: approach relies soley on $Y$
+
+Outcome: Numeric
+
+Naive  Benchmark:  Average ($\bar{Y}$)
+
+A good prediction model should outperform the benchmark criterion in terms of predictive accuracy.
+
+
+# Measures for predicted classes
+
+## Confusion matrix/ Classification matrix
+
+```{r}
+# Load necessary libraries
+library(knitr)
+library(kableExtra)
+
+# Create the confusion matrix data frame
+confusion_df <- data.frame(
+  "Actual" = c("Positive", "Negative"),
+  "Positive" = c("A - TP", "C - FN"),
+  "Negative" = c("B-FP", "D-FN")
+)
+
+# Render the confusion matrix using kable
+kable(confusion_df, format = "html", align = 'c', caption = "Confusion Matrix") %>%
+  add_header_above(c(" " = 1, "Predicted" = 2)) %>%
+  kable_styling(full_width = FALSE, position = "left")
+
+
+```
+
+TP - True Positive
+
+FP - False Positive
+
+FN - False Negative
+
+TN - True Negative
+
+##
+
+$A$ - True positive
+
+$B$ - False Positive
+
+$C$ - False negative
+
+$D$ - True Negative
+
+
+$$Sensitivity = \frac{A}{A+C}$$
+
+$$Specificity = \frac{D}{B+D}$$
+
+$$Prevalence = \frac{A+C}{A+B+C+D}$$
+
+## 
+
+$$\text{Detection Rate} = \frac{A}{A+B+C+D}$$
+
+$$\text{Detection Prevalence} = \frac{A+B}{A+B+C+D}$$
+
+$$\text{Balance Accuracy}=\frac{Sensitivity + Specificity}{2}$$
+
+$$Precision = \frac{A}{A+B}$$
+
+$$Recall = \frac{A}{A+C}$$
+
+## F-1 score
+
+
+$$F_1 = \frac{2 \times (\text{precision} \times \text{recall})}{\text{precision + recall}}$$
+The $F1$ score can be interpreted as a harmonic mean of the precision and recall, where an $F1$ score reaches its best value at 1 and worst score at 0. The relative contribution of precision and recall to the F1 score are equal.
+
+---
+
+## F-beta score
+
+
+$$F_1 = \frac{(1+\beta^2) \times (\text{precision} \times \text{recall})}{(\beta^2 \times \text{precision}) + \text{recall}}$$
+
+- Weighted harmonic mean of the precision and recall, reaching its optimal value at 1 and worst value at 0.
+
+- The beta parameter determines the weight of recall in the combined score. 
+
+$$\beta < 1 - \text{more weight to precision }$$
+
+$$\beta > 1 - \text{favors recall}$$
+
+##
+
+**Positive Prediction Value (PPV)**
+
+$$PPV = \frac{sensitivity \times prevalence}{(sensitivity \times prevalence)+((1-specificity)\times (1-prevalence))}$$
+
+**Negative Prediction Value (PPV)**
+
+$$NPV = \frac{specificity \times (1-prevalence)}{( (1-sensitivity) \times prevalence)+(specificity \times (1-prevalence))}$$
+
+---
+
+### Receiver Operating Characteristic (ROC) curve
+
+::: columns
+::: {.column width="60%"}
+
+```{r,  out.width="100%"}
+library(ggplot2)
+
+# Sample data without "Worse" classifier
+roc_data <- data.frame(
+  fpr = c(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 0, 1, 0, 1),
+  tpr = c(0, 0.4, 0.6, 0.7, 0.75, 0.8, 0.85, 0.9, 0.92, 0.95, 1, 1, 1, 0, 1),
+  classifier = c("Better", "Better", "Better", "Better", "Better", "Better", "Better", "Better", "Better", "Better", "Better", 
+                 "Perfect", "Perfect", 
+                 "Random", "Random")
+)
+
+# Define colors for the classifiers
+classifier_colors <- c("Perfect" = "green", "Random" = "blue", "Better" = "black")
+
+# Plot ROC curve
+ggplot(roc_data, aes(x = fpr, y = tpr, color = classifier)) +
+  geom_line(size = 1) +
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "grey") + # Diagonal line for random classifier
+  scale_color_manual(values = classifier_colors) +
+  labs(title = "ROC Curve",
+       x = "False Positive Rate (FPR)",
+       y = "True Positive Rate (TPR)",
+       color = "Classifier") +
+  theme_minimal() + coord_equal()
+
+
+```
+
+
+
+:::
+  
+::: {.column width="40%"}
+
+$$TPR = \frac{TP}{TP+FN}$$
+
+$$FPR = \frac{FP}{FP+TN}$$
+
+**Area Under Curve (AUC)**
+
+1. Perfect classifier: $AUC = 1$
+
+2. Random classifier: $AUC = 0.5$
+
+:::
+:::

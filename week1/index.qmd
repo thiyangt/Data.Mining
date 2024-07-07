@@ -24,8 +24,6 @@ The process of discovering interesting patterns and knowledge from massive amoun
 
 > What makes a pattern interesting?
 
-
-
 ## Apllications
 
 1.  Healthcare: Google Flue Trend (GFT) analysis project
@@ -44,60 +42,61 @@ Data mining is the core step in KDD process.
 
 ## Steps in KDD
 
-1. Data Preparation
-    - Data cleaning
-    - Data standardization
-    - Data integration
-    - Data transformation
-    - Data selection
-    
-2. Data Mining
+1.  Data Preparation
 
-3. Pattern/ Model Evaluation
+    -   Data cleaning
+    -   Data standardization
+    -   Data integration
+    -   Data transformation
+    -   Data selection
 
-4. Knowledge Presentation
+2.  Data Mining
+
+3.  Pattern/ Model Evaluation
+
+4.  Knowledge Presentation
 
 ## Data transformation
 
-1. Scaling data
+1.  Scaling data
 
-2. Data reduction
+2.  Data reduction
 
-3. Data discretization
+3.  Data discretization
 
-4. Data aggregation
+4.  Data aggregation
 
 ## Advantages of data preprocessing
 
-1. Improves data quality
+1.  Improves data quality
 
-2. Mask sensitive data
+2.  Mask sensitive data
 
-3. Improve completeness of data
+3.  Improve completeness of data
 
 ## Disadvantages
 
-1. Time-consuming
+1.  Time-consuming
 
-2. Require specialized skills and knowledge
+2.  Require specialized skills and knowledge
 
-3. Data loss
+3.  Data loss
 
-4. High cost
+4.  High cost
 
 ## Diversity of data types
 
-1. Structured, Semi-structures, Unstructured data
+1.  Structured, Semi-structures, Unstructured data
 
-2. Spatial, Temporal, Spatio-temporal
+2.  Spatial, Temporal, Spatio-temporal
 
-3. Stored vs streaming data
+3.  Stored vs streaming data
 
 ## Data Mining Tasks
 
 Data mining tasks are generally divided into two major categories:
 
-i. Predictive tasks
+i.  Predictive tasks
 
 ii. Descriptive tasks
 

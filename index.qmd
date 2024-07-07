@@ -7,3 +7,23 @@ title: "STA 529 2.0 Data Mining"
 [Introduction to data mining](./week1/index.html)
 
 [Classification and Regression Trees](./week2/index.html)
+
+## Week 2: July 7, 2024
+
+[Measuring Performance](./week3/index.html)
+
+**Data**
+
+```r
+library(mlbench)
+library(BostonHousing)
+```
+
+**Practical 1: Working with missing data**
+
+[Lab 1](https://thiyanga-datamining.netlify.app/lab1)
+
+
+**Practical 2: Classification**
+
+[Lab 2](https://thiyanga-datamining.netlify.app/lab2)

@@ -97,7 +97,7 @@ rpart.plot(tree, box.palette="RdBu", shadow.col="gray", nn=TRUE)
 
 ```
 
-##
+## 
 
 ```{r}
 print(tree) 

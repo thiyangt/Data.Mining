@@ -1,5 +1,215 @@
 [
   {
+    "objectID": "week3/index.html#loss-function",
+    "href": "week3/index.html#loss-function",
+    "title": "Measuring Performance",
+    "section": "Loss function",
+    "text": "Loss function\n\nFunction that calculates loss for a single data point\n\n\\(e_i = y - \\hat{y}\\)\n\\(e_i^2 = (y - \\hat{y})^2\\)"
+  },
+  {
+    "objectID": "week3/index.html#cost-function",
+    "href": "week3/index.html#cost-function",
+    "title": "Measuring Performance",
+    "section": "Cost function",
+    "text": "Cost function\n\nCalculates loss for the entire data sets\n\n\\[ME = \\frac{1}{n}\\sum_{i=1}^n e_i\\]"
+  },
+  {
+    "objectID": "week3/index.html#prediction-accuracy-measures-cost-functions",
+    "href": "week3/index.html#prediction-accuracy-measures-cost-functions",
+    "title": "Measuring Performance",
+    "section": "Prediction accuracy measures (cost functions)",
+    "text": "Prediction accuracy measures (cost functions)\nMean Error\n\\[ME = \\frac{1}{n}\\sum_{i=1}^n e_i\\]\n\nError can be both negative and positive. So they can cancel each other during the summation."
+  },
+  {
+    "objectID": "week3/index.html#mean-absolute-error-l1-loss",
+    "href": "week3/index.html#mean-absolute-error-l1-loss",
+    "title": "Measuring Performance",
+    "section": "Mean Absolute Error (L1 loss)",
+    "text": "Mean Absolute Error (L1 loss)\n\\[MAE = \\frac{1}{n}\\sum_{i=1}^n |e_i|\\]"
+  },
+  {
+    "objectID": "week3/index.html#mean-squared-error-l2-loss",
+    "href": "week3/index.html#mean-squared-error-l2-loss",
+    "title": "Measuring Performance",
+    "section": "Mean Squared Error (L2 loss)",
+    "text": "Mean Squared Error (L2 loss)\n\\[MSE = \\frac{1}{n}\\sum_{i=1}^n e^2_i\\]"
+  },
+  {
+    "objectID": "week3/index.html#mean-percentage-error",
+    "href": "week3/index.html#mean-percentage-error",
+    "title": "Measuring Performance",
+    "section": "Mean Percentage Error",
+    "text": "Mean Percentage Error\n\\[MPE = \\frac{1}{n}\\sum_{i=1}^n \\frac{e_i}{y_i}\\]"
+  },
+  {
+    "objectID": "week3/index.html#mean-absolute-percentage-error",
+    "href": "week3/index.html#mean-absolute-percentage-error",
+    "title": "Measuring Performance",
+    "section": "Mean Absolute Percentage Error",
+    "text": "Mean Absolute Percentage Error\n\\[MAPE = \\frac{1}{n}\\sum_{i=1}^n |\\frac{e_i}{y_i}|\\]"
+  },
+  {
+    "objectID": "week3/index.html#root-mean-squared-error",
+    "href": "week3/index.html#root-mean-squared-error",
+    "title": "Measuring Performance",
+    "section": "Root Mean Squared Error",
+    "text": "Root Mean Squared Error\n\\[RMSE = \\sqrt{\\frac{1}{n}\\sum_{i=1}^n e^2_i}\\]"
+  },
+  {
+    "objectID": "week3/index.html#visualizaion-of-error-distribution",
+    "href": "week3/index.html#visualizaion-of-error-distribution",
+    "title": "Measuring Performance",
+    "section": "Visualizaion of error distribution",
+    "text": "Visualizaion of error distribution\nGraphical representations reveal more than metrics alone."
+  },
+  {
+    "objectID": "week3/index.html#accuracy-measures-on-training-set-vs-test-set",
+    "href": "week3/index.html#accuracy-measures-on-training-set-vs-test-set",
+    "title": "Measuring Performance",
+    "section": "Accuracy Measures on Training Set vs Test Set",
+    "text": "Accuracy Measures on Training Set vs Test Set\nAccuracy measure on training set: Tells about the model fit\nAccuracy measure on test set: Model ability to predict new data"
+  },
+  {
+    "objectID": "week3/index.html#evaluate-classifier-against-benchmark",
+    "href": "week3/index.html#evaluate-classifier-against-benchmark",
+    "title": "Measuring Performance",
+    "section": "Evaluate Classifier Against Benchmark",
+    "text": "Evaluate Classifier Against Benchmark\nNaive approach: approach relies soley on \\(Y\\)\nOutcome: Numeric\nNaive Benchmark: Average (\\(\\bar{Y}\\))\nA good prediction model should outperform the benchmark criterion in terms of predictive accuracy."
+  },
+  {
+    "objectID": "week3/index.html#confusion-matrix-classification-matrix",
+    "href": "week3/index.html#confusion-matrix-classification-matrix",
+    "title": "Measuring Performance",
+    "section": "Confusion matrix/ Classification matrix",
+    "text": "Confusion matrix/ Classification matrix\n\n\n\n\nConfusion Matrix\n\n\n\n\n\n\n\n\n\nPredicted\n\n\n\nActual\nPositive\nNegative\n\n\n\n\nPositive\nA - TP\nB-FP\n\n\nNegative\nC - FN\nD-FN\n\n\n\n\n\n\n\n\nTP - True Positive\nFP - False Positive\nFN - False Negative\nTN - True Negative"
+  },
+  {
+    "objectID": "week3/index.html#section",
+    "href": "week3/index.html#section",
+    "title": "Measuring Performance",
+    "section": "",
+    "text": "\\(A\\) - True positive\n\\(B\\) - False Positive\n\\(C\\) - False negative\n\\(D\\) - True Negative\n\\[Sensitivity = \\frac{A}{A+C}\\]\n\\[Specificity = \\frac{D}{B+D}\\]\n\\[Prevalence = \\frac{A+C}{A+B+C+D}\\]"
+  },
+  {
+    "objectID": "week3/index.html#section-1",
+    "href": "week3/index.html#section-1",
+    "title": "Measuring Performance",
+    "section": "",
+    "text": "\\[\\text{Detection Rate} = \\frac{A}{A+B+C+D}\\]\n\\[\\text{Detection Prevalence} = \\frac{A+B}{A+B+C+D}\\]\n\\[\\text{Balance Accuracy}=\\frac{Sensitivity + Specificity}{2}\\]\n\\[Precision = \\frac{A}{A+B}\\]\n\\[Recall = \\frac{A}{A+C}\\]"
+  },
+  {
+    "objectID": "week3/index.html#f-1-score",
+    "href": "week3/index.html#f-1-score",
+    "title": "Measuring Performance",
+    "section": "F-1 score",
+    "text": "F-1 score\n\\[F_1 = \\frac{2 \\times (\\text{precision} \\times \\text{recall})}{\\text{precision + recall}}\\] The \\(F1\\) score can be interpreted as a harmonic mean of the precision and recall, where an \\(F1\\) score reaches its best value at 1 and worst score at 0. The relative contribution of precision and recall to the F1 score are equal."
+  },
+  {
+    "objectID": "week3/index.html#f-beta-score",
+    "href": "week3/index.html#f-beta-score",
+    "title": "Measuring Performance",
+    "section": "F-beta score",
+    "text": "F-beta score\n\\[F_1 = \\frac{(1+\\beta^2) \\times (\\text{precision} \\times \\text{recall})}{(\\beta^2 \\times \\text{precision}) + \\text{recall}}\\]\n\nWeighted harmonic mean of the precision and recall, reaching its optimal value at 1 and worst value at 0.\nThe beta parameter determines the weight of recall in the combined score.\n\n\\[\\beta &lt; 1 - \\text{more weight to precision }\\]\n\\[\\beta &gt; 1 - \\text{favors recall}\\]"
+  },
+  {
+    "objectID": "week3/index.html#section-2",
+    "href": "week3/index.html#section-2",
+    "title": "Measuring Performance",
+    "section": "",
+    "text": "Positive Prediction Value (PPV)\n\\[PPV = \\frac{sensitivity \\times prevalence}{(sensitivity \\times prevalence)+((1-specificity)\\times (1-prevalence))}\\]\nNegative Prediction Value (PPV)\n\\[NPV = \\frac{specificity \\times (1-prevalence)}{( (1-sensitivity) \\times prevalence)+(specificity \\times (1-prevalence))}\\]"
+  },
+  {
+    "objectID": "week1/index.html#apllications",
+    "href": "week1/index.html#apllications",
+    "title": "Introduction to Data Mining",
+    "section": "Apllications",
+    "text": "Apllications\n\nHealthcare: Google Flue Trend (GFT) analysis project\nFraud Detection: Identifying fraudulent transactions by analyzing patterns\nRetail: Understanding purchasing patterns to optimize product placement.\nTelecommunication : Identifying customers likely to leave and targeting retention efforts (Churn Prediction)\nEducation: Student Performance Analysis by predicting student outcomes and identifying at-risk students."
+  },
+  {
+    "objectID": "week1/index.html#steps-in-kdd",
+    "href": "week1/index.html#steps-in-kdd",
+    "title": "Introduction to Data Mining",
+    "section": "Steps in KDD",
+    "text": "Steps in KDD\n\nData Preparation\n\nData cleaning\nData standardization\nData integration\nData transformation\nData selection\n\nData Mining\nPattern/ Model Evaluation\nKnowledge Presentation"
+  },
+  {
+    "objectID": "week1/index.html#data-transformation",
+    "href": "week1/index.html#data-transformation",
+    "title": "Introduction to Data Mining",
+    "section": "Data transformation",
+    "text": "Data transformation\n\nScaling data\nData reduction\nData discretization\nData aggregation"
+  },
+  {
+    "objectID": "week1/index.html#advantages-of-data-preprocessing",
+    "href": "week1/index.html#advantages-of-data-preprocessing",
+    "title": "Introduction to Data Mining",
+    "section": "Advantages of data preprocessing",
+    "text": "Advantages of data preprocessing\n\nImproves data quality\nMask sensitive data\nImprove completeness of data"
+  },
+  {
+    "objectID": "week1/index.html#disadvantages",
+    "href": "week1/index.html#disadvantages",
+    "title": "Introduction to Data Mining",
+    "section": "Disadvantages",
+    "text": "Disadvantages\n\nTime-consuming\nRequire specialized skills and knowledge\nData loss\nHigh cost"
+  },
+  {
+    "objectID": "week1/index.html#diversity-of-data-types",
+    "href": "week1/index.html#diversity-of-data-types",
+    "title": "Introduction to Data Mining",
+    "section": "Diversity of data types",
+    "text": "Diversity of data types\n\nStructured, Semi-structures, Unstructured data\nSpatial, Temporal, Spatio-temporal\nStored vs streaming data"
+  },
+  {
+    "objectID": "week1/index.html#data-mining-tasks",
+    "href": "week1/index.html#data-mining-tasks",
+    "title": "Introduction to Data Mining",
+    "section": "Data Mining Tasks",
+    "text": "Data Mining Tasks\nData mining tasks are generally divided into two major categories:\n\nPredictive tasks\nDescriptive tasks"
+  },
+  {
+    "objectID": "week1/index.html#statistics-vs-data-mining",
+    "href": "week1/index.html#statistics-vs-data-mining",
+    "title": "Introduction to Data Mining",
+    "section": "Statistics vs Data Mining",
+    "text": "Statistics vs Data Mining\nIn-class demo"
+  },
+  {
+    "objectID": "week1/index.html#data-mining-data-science-data-engineering",
+    "href": "week1/index.html#data-mining-data-science-data-engineering",
+    "title": "Introduction to Data Mining",
+    "section": "Data Mining, Data Science, Data Engineering",
+    "text": "Data Mining, Data Science, Data Engineering\nIn-class demo"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Software",
+    "section": "",
+    "text": "Software: R and RStudio\nPackages:\nlibrary(tidyverse)\nlibrary(tidymodels)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 529 2.0 Data Mining",
+    "section": "",
+    "text": "Introduction to data mining\nClassification and Regression Trees"
+  },
+  {
+    "objectID": "index.html#week-1-june-29-2024",
+    "href": "index.html#week-1-june-29-2024",
+    "title": "STA 529 2.0 Data Mining",
+    "section": "",
+    "text": "Introduction to data mining\nClassification and Regression Trees"
+  },
+  {
+    "objectID": "index.html#week-2-july-7-2024",
+    "href": "index.html#week-2-july-7-2024",
+    "title": "STA 529 2.0 Data Mining",
+    "section": "Week 2: July 7, 2024",
+    "text": "Week 2: July 7, 2024\nMeasuring Performance\nData\nlibrary(mlbench)\nlibrary(BostonHousing)\nPractical 1: Working with missing data\nLab 1\nPractical 2: Classification\nLab 2"
+  },
+  {
     "objectID": "week2/index.html#history-of-decision-trees",
     "href": "week2/index.html#history-of-decision-trees",
     "title": "Classification and Regression Trees",
@@ -285,89 +495,5 @@
     "title": "Classification and Regression Trees",
     "section": "Decision trees - disadvantages",
     "text": "Decision trees - disadvantages\n\nUnstable: Adding a new data point or little bit of noise can lead to re-generation of the overall tree and all nodes need to be recalculated and recreated.\nNot suitable for large datasets"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STA 529 2.0 Data Mining",
-    "section": "",
-    "text": "Introduction to data mining\nClassification and Regression Trees"
-  },
-  {
-    "objectID": "index.html#week-1-june-29-2024",
-    "href": "index.html#week-1-june-29-2024",
-    "title": "STA 529 2.0 Data Mining",
-    "section": "",
-    "text": "Introduction to data mining\nClassification and Regression Trees"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Software",
-    "section": "",
-    "text": "Software: R and RStudio\nPackages:\nlibrary(tidyverse)\nlibrary(tidymodels)"
-  },
-  {
-    "objectID": "week1/index.html#apllications",
-    "href": "week1/index.html#apllications",
-    "title": "Introduction to Data Mining",
-    "section": "Apllications",
-    "text": "Apllications\n\nHealthcare: Google Flue Trend (GFT) analysis project\nFraud Detection: Identifying fraudulent transactions by analyzing patterns\nRetail: Understanding purchasing patterns to optimize product placement.\nTelecommunication : Identifying customers likely to leave and targeting retention efforts (Churn Prediction)\nEducation: Student Performance Analysis by predicting student outcomes and identifying at-risk students."
-  },
-  {
-    "objectID": "week1/index.html#steps-in-kdd",
-    "href": "week1/index.html#steps-in-kdd",
-    "title": "Introduction to Data Mining",
-    "section": "Steps in KDD",
-    "text": "Steps in KDD\n\nData Preparation\n\nData cleaning\nData standardization\nData integration\nData transformation\nData selection\n\nData Mining\nPattern/ Model Evaluation\nKnowledge Presentation"
-  },
-  {
-    "objectID": "week1/index.html#data-transformation",
-    "href": "week1/index.html#data-transformation",
-    "title": "Introduction to Data Mining",
-    "section": "Data transformation",
-    "text": "Data transformation\n\nScaling data\nData reduction\nData discretization\nData aggregation"
-  },
-  {
-    "objectID": "week1/index.html#advantages-of-data-preprocessing",
-    "href": "week1/index.html#advantages-of-data-preprocessing",
-    "title": "Introduction to Data Mining",
-    "section": "Advantages of data preprocessing",
-    "text": "Advantages of data preprocessing\n\nImproves data quality\nMask sensitive data\nImprove completeness of data"
-  },
-  {
-    "objectID": "week1/index.html#disadvantages",
-    "href": "week1/index.html#disadvantages",
-    "title": "Introduction to Data Mining",
-    "section": "Disadvantages",
-    "text": "Disadvantages\n\nTime-consuming\nRequire specialized skills and knowledge\nData loss\nHigh cost"
-  },
-  {
-    "objectID": "week1/index.html#diversity-of-data-types",
-    "href": "week1/index.html#diversity-of-data-types",
-    "title": "Introduction to Data Mining",
-    "section": "Diversity of data types",
-    "text": "Diversity of data types\n\nStructured, Semi-structures, Unstructured data\nSpatial, Temporal, Spatio-temporal\nStored vs streaming data"
-  },
-  {
-    "objectID": "week1/index.html#data-mining-tasks",
-    "href": "week1/index.html#data-mining-tasks",
-    "title": "Introduction to Data Mining",
-    "section": "Data Mining Tasks",
-    "text": "Data Mining Tasks\nData mining tasks are generally divided into two major categories:\n\nPredictive tasks\nDescriptive tasks"
-  },
-  {
-    "objectID": "week1/index.html#statistics-vs-data-mining",
-    "href": "week1/index.html#statistics-vs-data-mining",
-    "title": "Introduction to Data Mining",
-    "section": "Statistics vs Data Mining",
-    "text": "Statistics vs Data Mining\nIn-class demo"
-  },
-  {
-    "objectID": "week1/index.html#data-mining-data-science-data-engineering",
-    "href": "week1/index.html#data-mining-data-science-data-engineering",
-    "title": "Introduction to Data Mining",
-    "section": "Data Mining, Data Science, Data Engineering",
-    "text": "Data Mining, Data Science, Data Engineering\nIn-class demo"
   }
 ]
