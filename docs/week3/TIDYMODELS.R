@@ -161,10 +161,11 @@ iris_ranger |>
   glimpse()
 
 ## Performance of the model
-iris_ranger %>%
-  predict(iris_testing) %>%
-  bind_cols(iris_testing) %>%
-  metrics(truth = Species, estimate = .pred_class)
+iris_ranger |>
+  predict(iris_testing) |>
+  bind_cols(iris_testing) |>
+  metrics(truth = Species,
+          estimate = .pred_class)
 
 iris_rf %>%
   predict(iris_testing) %>%
