@@ -95,14 +95,14 @@ library(kableExtra)
 
 # Create the confusion matrix data frame
 confusion_df <- data.frame(
-  "Actual" = c("Positive", "Negative"),
+  "Predicted" = c("Positive", "Negative"),
   "Positive" = c("A - TP", "C - FN"),
-  "Negative" = c("B-FP", "D-FN")
+  "Negative" = c("B-FP", "D-TN")
 )
 
 # Render the confusion matrix using kable
 kable(confusion_df, format = "html", align = 'c', caption = "Confusion Matrix") %>%
-  add_header_above(c(" " = 1, "Predicted" = 2)) %>%
+  add_header_above(c(" " = 1, "Actual" = 2)) %>%
   kable_styling(full_width = FALSE, position = "left")
 
 
@@ -118,11 +118,11 @@ TN - True Negative
 
 ## 
 
-$A$ - True positive
+$A$ - True Positive
 
 $B$ - False Positive
 
-$C$ - False negative
+$C$ - False Negative
 
 $D$ - True Negative
 

@@ -81,14 +81,14 @@
     "href": "week3/index.html#confusion-matrix-classification-matrix",
     "title": "Measuring Performance",
     "section": "Confusion matrix/ Classification matrix",
-    "text": "Confusion matrix/ Classification matrix\n\n\n\n\nConfusion Matrix\n\n\n\n\n\n\n\n\n\nPredicted\n\n\n\nActual\nPositive\nNegative\n\n\n\n\nPositive\nA - TP\nB-FP\n\n\nNegative\nC - FN\nD-FN\n\n\n\n\n\n\n\n\nTP - True Positive\nFP - False Positive\nFN - False Negative\nTN - True Negative"
+    "text": "Confusion matrix/ Classification matrix\n\n\n\n\nConfusion Matrix\n\n\n\n\n\n\n\n\n\nActual\n\n\n\nPredicted\nPositive\nNegative\n\n\n\n\nPositive\nA - TP\nB-FP\n\n\nNegative\nC - FN\nD-TN\n\n\n\n\n\n\n\n\nTP - True Positive\nFP - False Positive\nFN - False Negative\nTN - True Negative"
   },
   {
     "objectID": "week3/index.html#section",
     "href": "week3/index.html#section",
     "title": "Measuring Performance",
     "section": "",
-    "text": "\\(A\\) - True positive\n\\(B\\) - False Positive\n\\(C\\) - False negative\n\\(D\\) - True Negative\n\\[Sensitivity = \\frac{A}{A+C}\\]\n\\[Specificity = \\frac{D}{B+D}\\]\n\\[Prevalence = \\frac{A+C}{A+B+C+D}\\]"
+    "text": "\\(A\\) - True Positive\n\\(B\\) - False Positive\n\\(C\\) - False Negative\n\\(D\\) - True Negative\n\\[Sensitivity = \\frac{A}{A+C}\\]\n\\[Specificity = \\frac{D}{B+D}\\]\n\\[Prevalence = \\frac{A+C}{A+B+C+D}\\]"
   },
   {
     "objectID": "week3/index.html#section-1",
