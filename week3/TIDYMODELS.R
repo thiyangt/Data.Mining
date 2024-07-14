@@ -1,4 +1,5 @@
 library(tidymodels)
+library(tidyverse)
 
 #Data Sampling
 #The initial_split() function is specially 
@@ -9,19 +10,23 @@ library(tidymodels)
 #This function generates an rplit object, 
 #not a data frame. 
 
-
-iris_split <- initial_split(iris, prop = 0.6)
-iris_spli
+# Step 1: Splitting data
+iris_split <- initial_split(iris, 
+                            prop = 0.6)
+iris_split
 
 #To access the observations reserved for training
 
-iris_split %>%
-  training() %>%
+iris_split |>
+  training() |>
   glimpse()
 
 # Your turn
 # Extract test set
 
+iris_split |>
+  testing() |>
+  glimpse()
 
 ## Reciepe and prep
 
@@ -71,20 +76,24 @@ iris_split %>%
 #step_scale() - Normalizes numeric data to have a
 #standard deviation of one
 
-iris_recipe <- training(iris_split) %>%
-  recipe(Species ~.) %>%
-  step_corr(all_predictors()) %>%
-  step_center(all_predictors(), -all_outcomes()) %>%
-  step_scale(all_predictors(), -all_outcomes()) %>%
-  prep() # This gives receipe object
+iris_recipe <- training(iris_split) |>
+  recipe(Species ~.) |>
+  step_corr(all_predictors()) |>
+  step_center(all_predictors(), -all_outcomes()) |>
+  step_scale(all_predictors(), -all_outcomes()) |>
+  prep() # This gives recipe object
 
+##
+library(GGally)
+ggpairs(training(iris_split))
 # iris_recipe - print details about the recipe.
 
 # Execute the pre-processing
-iris_testing <- iris_recipe %>%
+iris_testing <- iris_recipe |>
   bake(testing(iris_split)) 
 
 glimpse(iris_testing)
+
 
 #################
 
@@ -134,21 +143,21 @@ glimpse(iris_training)
 
 ## Model Training
 iris_ranger <- rand_forest(trees = 100, 
-                           mode = "classification") %>%
-  set_engine("ranger") %>%
+                           mode = "classification") |>
+  set_engine("ranger") |>
   fit(Species ~ ., data = iris_training)
 
 iris_rf <-  rand_forest(trees = 100, 
-                        mode = "classification") %>%
-  set_engine("randomForest") %>%
+                        mode = "classification") |>
+  set_engine("randomForest") |>
   fit(Species ~ ., data = iris_training)
 
 ## Prediction
 predict(iris_ranger, iris_testing)
 
-iris_ranger %>%
-  predict(iris_testing) %>%
-  bind_cols(iris_testing) %>%
+iris_ranger |>
+  predict(iris_testing) |>
+  bind_cols(iris_testing) |>
   glimpse()
 
 ## Performance of the model
