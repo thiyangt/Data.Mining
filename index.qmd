@@ -14,7 +14,7 @@ title: "STA 529 2.0 Data Mining"
 
 **Data**
 
-```r
+``` r
 library(mlbench)
 library(BostonHousing)
 ```
@@ -23,7 +23,11 @@ library(BostonHousing)
 
 [Lab 1](https://thiyanga-datamining.netlify.app/lab1)
 
-
 **Practical 2: Classification**
 
 [Lab 2](https://thiyanga-datamining.netlify.app/lab2)
+
+
+## Week 3: July 14, 2024
+
+[Random Forests](https://thiyanga-datamining.netlify.app/L3/L3.pdf)

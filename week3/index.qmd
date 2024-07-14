@@ -22,15 +22,15 @@ format:
 
 ## Loss function
 
-- Function that calculates loss for a single data point
+-   Function that calculates loss for a single data point
 
-$e_i = y - \hat{y}$
+$e_i = y_i - \hat{y_i}$
 
-$e_i^2 = (y - \hat{y})^2$
+$e_i^2 = (y_i - \hat{y_i})^2$
 
 ## Cost function
 
-- Calculates loss for the entire data sets 
+-   Calculates loss for the entire data sets
 
 $$ME = \frac{1}{n}\sum_{i=1}^n e_i$$
 
@@ -42,34 +42,27 @@ Mean Error
 
 $$ME = \frac{1}{n}\sum_{i=1}^n e_i$$
 
-
-- Error can be both negative and positive. So they can cancel each other during the summation.
+-   Error can be both negative and positive. So they can cancel each other during the summation.
 
 ## Mean Absolute Error (L1 loss)
 
 $$MAE = \frac{1}{n}\sum_{i=1}^n |e_i|$$
 
-##  Mean Squared Error (L2 loss)
+## Mean Squared Error (L2 loss)
 
 $$MSE = \frac{1}{n}\sum_{i=1}^n e^2_i$$
-
 
 ## Mean Percentage Error
 
 $$MPE = \frac{1}{n}\sum_{i=1}^n \frac{e_i}{y_i}$$
 
-
 ## Mean Absolute Percentage Error
 
 $$MAPE = \frac{1}{n}\sum_{i=1}^n |\frac{e_i}{y_i}|$$
 
-
-
-
 ## Root Mean Squared Error
 
 $$RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^n e^2_i}$$
-
 
 ## Visualizaion of error distribution
 
@@ -79,9 +72,7 @@ Graphical representations reveal more than metrics alone.
 
 Accuracy measure on training set: Tells about the model fit
 
-
 Accuracy measure on test set: Model ability to predict new data
-
 
 ## Evaluate Classifier Against Benchmark
 
@@ -89,10 +80,9 @@ Naive approach: approach relies soley on $Y$
 
 Outcome: Numeric
 
-Naive  Benchmark:  Average ($\bar{Y}$)
+Naive Benchmark: Average ($\bar{Y}$)
 
 A good prediction model should outperform the benchmark criterion in terms of predictive accuracy.
-
 
 # Measures for predicted classes
 
@@ -126,7 +116,7 @@ FN - False Negative
 
 TN - True Negative
 
-##
+## 
 
 $A$ - True positive
 
@@ -135,7 +125,6 @@ $B$ - False Positive
 $C$ - False negative
 
 $D$ - True Negative
-
 
 $$Sensitivity = \frac{A}{A+C}$$
 
@@ -157,26 +146,23 @@ $$Recall = \frac{A}{A+C}$$
 
 ## F-1 score
 
+$$F_1 = \frac{2 \times (\text{precision} \times \text{recall})}{\text{precision + recall}}$$ The $F1$ score can be interpreted as a harmonic mean of the precision and recall, where an $F1$ score reaches its best value at 1 and worst score at 0. The relative contribution of precision and recall to the F1 score are equal.
 
-$$F_1 = \frac{2 \times (\text{precision} \times \text{recall})}{\text{precision + recall}}$$
-The $F1$ score can be interpreted as a harmonic mean of the precision and recall, where an $F1$ score reaches its best value at 1 and worst score at 0. The relative contribution of precision and recall to the F1 score are equal.
-
----
+------------------------------------------------------------------------
 
 ## F-beta score
 
-
 $$F_1 = \frac{(1+\beta^2) \times (\text{precision} \times \text{recall})}{(\beta^2 \times \text{precision}) + \text{recall}}$$
 
-- Weighted harmonic mean of the precision and recall, reaching its optimal value at 1 and worst value at 0.
+-   Weighted harmonic mean of the precision and recall, reaching its optimal value at 1 and worst value at 0.
 
-- The beta parameter determines the weight of recall in the combined score. 
+-   The beta parameter determines the weight of recall in the combined score.
 
 $$\beta < 1 - \text{more weight to precision }$$
 
 $$\beta > 1 - \text{favors recall}$$
 
-##
+## 
 
 **Positive Prediction Value (PPV)**
 
@@ -186,13 +172,12 @@ $$PPV = \frac{sensitivity \times prevalence}{(sensitivity \times prevalence)+((1
 
 $$NPV = \frac{specificity \times (1-prevalence)}{( (1-sensitivity) \times prevalence)+(specificity \times (1-prevalence))}$$
 
----
+------------------------------------------------------------------------
 
 ### Receiver Operating Characteristic (ROC) curve
 
 ::: columns
 ::: {.column width="60%"}
-
 ```{r,  out.width="100%"}
 library(ggplot2)
 
@@ -221,22 +206,17 @@ ggplot(roc_data, aes(x = fpr, y = tpr, color = classifier)) +
 
 
 ```
-
-
-
 :::
-  
-::: {.column width="40%"}
 
+::: {.column width="40%"}
 $$TPR = \frac{TP}{TP+FN}$$
 
 $$FPR = \frac{FP}{FP+TN}$$
 
 **Area Under Curve (AUC)**
 
-1. Perfect classifier: $AUC = 1$
+1.  Perfect classifier: $AUC = 1$
 
-2. Random classifier: $AUC = 0.5$
-
+2.  Random classifier: $AUC = 0.5$
 :::
 :::

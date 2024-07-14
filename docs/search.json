@@ -4,7 +4,7 @@
     "href": "week3/index.html#loss-function",
     "title": "Measuring Performance",
     "section": "Loss function",
-    "text": "Loss function\n\nFunction that calculates loss for a single data point\n\n\\(e_i = y - \\hat{y}\\)\n\\(e_i^2 = (y - \\hat{y})^2\\)"
+    "text": "Loss function\n\nFunction that calculates loss for a single data point\n\n\\(e_i = y_i - \\hat{y_i}\\)\n\\(e_i^2 = (y_i - \\hat{y_i})^2\\)"
   },
   {
     "objectID": "week3/index.html#cost-function",
@@ -208,6 +208,13 @@
     "title": "STA 529 2.0 Data Mining",
     "section": "Week 2: July 7, 2024",
     "text": "Week 2: July 7, 2024\nMeasuring Performance\nData\nlibrary(mlbench)\nlibrary(BostonHousing)\nPractical 1: Working with missing data\nLab 1\nPractical 2: Classification\nLab 2"
+  },
+  {
+    "objectID": "index.html#week-3-july-14-2024",
+    "href": "index.html#week-3-july-14-2024",
+    "title": "STA 529 2.0 Data Mining",
+    "section": "Week 3: July 14, 2024",
+    "text": "Week 3: July 14, 2024\nRandom Forests"
   },
   {
     "objectID": "week2/index.html#history-of-decision-trees",
