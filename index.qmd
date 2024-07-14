@@ -31,3 +31,9 @@ library(BostonHousing)
 ## Week 3: July 14, 2024
 
 [Random Forests](https://thiyanga-datamining.netlify.app/L3/L3.pdf)
+
+**Preactical 3: Introduction to tidymodels**
+
+[Lab 3](./week3/TIDYMODELS.R)
+
+ Extra reading: Click [here](https://juliasilge.github.io/tidymodels-tutorial/)
