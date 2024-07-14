@@ -22,6 +22,31 @@ iris_split %>%
 # Your turn
 # Extract test set
 
+
+## Reciepe and prep
+
+#recipe
+#A recipe is a blueprint that defines a 
+#series of data preprocessing steps. 
+#These steps can include operations 
+#such as normalization, imputation, 
+#one-hot encoding, etc. 
+#When you create a recipe, 
+#you specify what transformations 
+#you want to apply to your data,
+#but the transformations themselves 
+#are not actually applied to the data 
+#until the recipe is prepared.
+
+#recipe: Defines the preprocessing 
+# steps without applying them.
+
+## Prep
+#prep: Uses the training data to 
+#calculate the required parameters 
+#(e.g., mean and standard deviation)
+                                                                   for scaling).
+
 #Pre-process interface
 #In tidymodels, the recipes package 
 #provides an interface that specializes 
@@ -51,7 +76,7 @@ iris_recipe <- training(iris_split) %>%
   step_corr(all_predictors()) %>%
   step_center(all_predictors(), -all_outcomes()) %>%
   step_scale(all_predictors(), -all_outcomes()) %>%
-  prep() # This gives receipie object
+  prep() # This gives receipe object
 
 # iris_recipe - print details about the recipe.
 
@@ -60,6 +85,43 @@ iris_testing <- iris_recipe %>%
   bake(testing(iris_split)) 
 
 glimpse(iris_testing)
+
+#################
+
+# recipe: Just specifies the steps to 
+#be taken.
+
+# TASKS OF PREP
+
+#prep: Estimates the necessary 
+#parameters for the transformations 
+#and prepares the recipe for application.
+
+#prep: Uses the training data
+#to calculate the 
+#required parameters 
+#(e.g., mean and standard 
+#deviation for scaling).
+
+#prep: Creates a prepped recipe 
+#that can be applied to new data 
+#via the bake function.
+
+#Workflow
+#1. Create a Recipe: Specify the 
+#preprocessing steps.
+
+
+#2. Prepare the Recipe: Use prep to 
+#compute the necessary parameters.
+
+
+#3. Apply the Prepared Recipe: 
+#Use bake to apply 
+#the transformations to the data.
+
+
+##################
 
 #Performing the same operation 
 #over the training data is redundant, 
