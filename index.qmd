@@ -27,7 +27,6 @@ library(BostonHousing)
 
 [Lab 2](https://thiyanga-datamining.netlify.app/lab2)
 
-
 ## Week 3: July 14, 2024
 
 [Random Forests](https://thiyanga-datamining.netlify.app/L3/L3.pdf)
@@ -36,4 +35,8 @@ library(BostonHousing)
 
 [Lab 3](./week3/TIDYMODELS.R)
 
- Extra reading: Click [here](https://juliasilge.github.io/tidymodels-tutorial/)
+Extra reading: Click [here](https://juliasilge.github.io/tidymodels-tutorial/)
+
+## Week 4: August 11, 2024
+
+[AdaBoost and Gradient Boosting](https://thiyanga-datamining.netlify.app/L4.pdf)
