@@ -76,7 +76,7 @@ $$ Milk \Rightarrow Bread \text{ [Support = 2%, Confidence = 60%]}$$
 
 ## Apriori algorithm
 
-Desired support: 20%
+Desired support count: 2 (22%)
 
 Desired confidence: 70%
 

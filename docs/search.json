@@ -32,7 +32,7 @@
     "href": "week5/index.html#apriori-algorithm",
     "title": "Pattern Mining: Market Basket Analysis",
     "section": "Apriori algorithm",
-    "text": "Apriori algorithm\nDesired support: 20%\nDesired confidence: 70%"
+    "text": "Apriori algorithm\nDesired support count: 2 (22%)\nDesired confidence: 70%"
   },
   {
     "objectID": "week5/index.html#transaction-dataset-1",
