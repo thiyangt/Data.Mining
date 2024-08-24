@@ -41,9 +41,23 @@ Extra reading: Click [here](https://juliasilge.github.io/tidymodels-tutorial/)
 
 [AdaBoost and Gradient Boosting](https://thiyanga-datamining.netlify.app/L4.pdf)
 
-
 ## Week 5: August 18, 2024
 
 [Pattern Mining: Market Basket Analysis](./week5/index.html)
 
 [Lab 4](https://thiyanga-datamining.netlify.app/arcf)
+
+## Week 6: August 24, 2024
+
+Association rule: 
+
+Example 1: [Lab 5.1](./Lab5/lab5.R)
+
+Example 2: [Lab 5.1](./Lab5/lab5.2.R)
+
+Example 3: 
+
+```r
+library(arules)
+data(Groceries)
+```

@@ -392,6 +392,13 @@
     "text": "Week 5: August 18, 2024\nPattern Mining: Market Basket Analysis\nLab 4"
   },
   {
+    "objectID": "index.html#week-6-august-24-2024",
+    "href": "index.html#week-6-august-24-2024",
+    "title": "STA 529 2.0 Data Mining",
+    "section": "Week 6: August 24, 2024",
+    "text": "Week 6: August 24, 2024\nAssociation rule:\nExample 1: Lab 5.1\nExample 2: Lab 5.1\nExample 3:\nlibrary(arules)\ndata(Groceries)"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Software",
@@ -543,7 +550,7 @@
     "href": "week3/index.html#confusion-matrix-classification-matrix",
     "title": "Measuring Performance",
     "section": "Confusion matrix/ Classification matrix",
-    "text": "Confusion matrix/ Classification matrix\n\n\n\n\nConfusion Matrix\n\n\n\n\n\n\n\n\n\nActual\n\n\n\nPredicted\nPositive\nNegative\n\n\n\n\nPositive\nA - TP\nB-FP\n\n\nNegative\nC - FN\nD-TN\n\n\n\n\n\n\n\n\nTP - True Positive\nFP - False Positive\nFN - False Negative\nTN - True Negative"
+    "text": "Confusion matrix/ Classification matrix\n\n\n\nConfusion Matrix\n\n\n\n\n\n\n\n\n\nActual\n\n\n\nPredicted\nPositive\nNegative\n\n\n\n\nPositive\nA - TP\nB-FP\n\n\nNegative\nC - FN\nD-TN\n\n\n\n\n\n\n\nTP - True Positive\nFP - False Positive\nFN - False Negative\nTN - True Negative"
   },
   {
     "objectID": "week3/index.html#section",
