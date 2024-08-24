@@ -62,7 +62,8 @@ library(arules)
 data(Groceries)
 ```
 
-Example 2: [Lab 5.3](./Lab5/lab5.3.R)
+Example 3: [Lab 5.3](./Lab5/lab5.3.R)
 
 [Collaborative Filtering](Collaborative Filtering)
 
+[Collaborative Filtering: Reading](https://www.sciencedirect.com/science/article/pii/S2666827023000488)
