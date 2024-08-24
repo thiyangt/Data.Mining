@@ -396,7 +396,7 @@
     "href": "index.html#week-6-august-24-2024",
     "title": "STA 529 2.0 Data Mining",
     "section": "Week 6: August 24, 2024",
-    "text": "Week 6: August 24, 2024\nAssociation rule:\nExample 1: Lab 5.1\nExample 2: Lab 5.1\nExample 3:\nlibrary(arules)\ndata(Groceries)"
+    "text": "Week 6: August 24, 2024\nAssociation rule:\nExample 1: Lab 5.1\nExample 2: Lab 5.2\nExample 3:\nlibrary(arules)\ndata(Groceries)\nExample 3: Lab 5.3\nCollaborative Filtering\nCollaborative Filtering: Reading"
   },
   {
     "objectID": "about.html",
