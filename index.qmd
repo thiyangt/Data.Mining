@@ -49,21 +49,48 @@ Extra reading: Click [here](https://juliasilge.github.io/tidymodels-tutorial/)
 
 ## Week 6: August 24, 2024
 
-Association rule: 
+Association rule:
 
 Example 1: [Lab 5.1](./Lab5/lab5.R)
 
 Example 2: [Lab 5.2](./Lab5/lab5.2.R)
 
-Example 3: 
+Example 3:
 
-```r
+``` r
 library(arules)
 data(Groceries)
 ```
 
 Example 3: [Lab 5.3](./Lab5/lab5.3.R)
 
-[Collaborative Filtering](Collaborative Filtering)
+Lab 6:
 
-[Collaborative Filtering: Reading](https://www.sciencedirect.com/science/article/pii/S2666827023000488)
+This question is based on "house.datamining2023.csv". The dataset is saved on your local machine.This dataset contains information related to housing characteristics in various geographical locations. 
+
+[Data](./Lab6/house.datamining.csv)
+
+The variable description is as follows:
+
+
+        longitude - The geographical coordinate specifying the east-west position of a location. 
+        
+        latitude - The geographical coordinate specifying the north-south position of a location. -
+       
+        housing_median_age - The median age of houses in a specific area. 
+        
+        total_rooms - The total number of rooms in all housing units in a specific area.
+        
+        total_bedrooms - The total number of bedrooms in all households in a specific area.
+        
+        population - The total population of a specific area. 
+        
+        households - The total number of households in a specific area. 
+        
+        median_income - The median income of households in a specific area. 
+        
+        median_house_value - The median value of houses in a specific area. 
+        
+        ocean_proximity - The proximity of the housing unit to the ocean, categorized into different classes. 
+
+

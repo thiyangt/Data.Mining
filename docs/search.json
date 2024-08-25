@@ -396,7 +396,7 @@
     "href": "index.html#week-6-august-24-2024",
     "title": "STA 529 2.0 Data Mining",
     "section": "Week 6: August 24, 2024",
-    "text": "Week 6: August 24, 2024\nAssociation rule:\nExample 1: Lab 5.1\nExample 2: Lab 5.2\nExample 3:\nlibrary(arules)\ndata(Groceries)\nExample 3: Lab 5.3\nCollaborative Filtering\nCollaborative Filtering: Reading"
+    "text": "Week 6: August 24, 2024\nAssociation rule:\nExample 1: Lab 5.1\nExample 2: Lab 5.2\nExample 3:\nlibrary(arules)\ndata(Groceries)\nExample 3: Lab 5.3\nLab 6:\nThis question is based on “house.datamining2023.csv”. The dataset is saved on your local machine.This dataset contains information related to housing characteristics in various geographical locations.\nData\nThe variable description is as follows:\n    longitude - The geographical coordinate specifying the east-west position of a location. \n    \n    latitude - The geographical coordinate specifying the north-south position of a location. -\n   \n    housing_median_age - The median age of houses in a specific area. \n    \n    total_rooms - The total number of rooms in all housing units in a specific area.\n    \n    total_bedrooms - The total number of bedrooms in all households in a specific area.\n    \n    population - The total population of a specific area. \n    \n    households - The total number of households in a specific area. \n    \n    median_income - The median income of households in a specific area. \n    \n    median_house_value - The median value of houses in a specific area. \n    \n    ocean_proximity - The proximity of the housing unit to the ocean, categorized into different classes."
   },
   {
     "objectID": "about.html",
