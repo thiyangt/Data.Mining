@@ -47,7 +47,7 @@ Extra reading: Click [here](https://juliasilge.github.io/tidymodels-tutorial/)
 
 [Lab 4](https://thiyanga-datamining.netlify.app/arcf)
 
-## Week 6: August 24, 2024
+## Week 6: August 25, 2024
 
 Association rule:
 
@@ -66,31 +66,40 @@ Example 3: [Lab 5.3](./Lab5/lab5.3.R)
 
 Lab 6:
 
-This question is based on "house.datamining2023.csv". The dataset is saved on your local machine.This dataset contains information related to housing characteristics in various geographical locations. 
+This question is based on "house.datamining2023.csv". The dataset is saved on your local machine.This dataset contains information related to housing characteristics in various geographical locations.
 
 [Data](./Lab6/house.datamining.csv)
 
 The variable description is as follows:
 
+```         
+    longitude - The geographical coordinate specifying the east-west position of a location. 
+    
+    latitude - The geographical coordinate specifying the north-south position of a location. -
+   
+    housing_median_age - The median age of houses in a specific area. 
+    
+    total_rooms - The total number of rooms in all housing units in a specific area.
+    
+    total_bedrooms - The total number of bedrooms in all households in a specific area.
+    
+    population - The total population of a specific area. 
+    
+    households - The total number of households in a specific area. 
+    
+    median_income - The median income of households in a specific area. 
+    
+    median_house_value - The median value of houses in a specific area. 
+    
+    ocean_proximity - The proximity of the housing unit to the ocean, categorized into different classes. 
+```
 
-        longitude - The geographical coordinate specifying the east-west position of a location. 
-        
-        latitude - The geographical coordinate specifying the north-south position of a location. -
-       
-        housing_median_age - The median age of houses in a specific area. 
-        
-        total_rooms - The total number of rooms in all housing units in a specific area.
-        
-        total_bedrooms - The total number of bedrooms in all households in a specific area.
-        
-        population - The total population of a specific area. 
-        
-        households - The total number of households in a specific area. 
-        
-        median_income - The median income of households in a specific area. 
-        
-        median_house_value - The median value of houses in a specific area. 
-        
-        ocean_proximity - The proximity of the housing unit to the ocean, categorized into different classes. 
+## Week 7: September 1, 2024
 
+
+[Collaborative filtering](./week7/index.html)
+
+[Lab 7](./Lab7/cf.R)
+
+[Support Vector Machine](https://thiyanga-datamining.netlify.app/svm)
 

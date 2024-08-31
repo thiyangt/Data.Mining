@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Brandon Hoeft">
+<meta name="dcterms.date" content="2017-10-06">
+
+<title>STA 529 2.0 Data Mining - RecommenderLab Tutorial</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">STA 529 2.0 Data Mining</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">Software</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#collaborative-filtering" id="toc-collaborative-filtering" class="nav-link" data-scroll-target="#collaborative-filtering">Collaborative Filtering</a></li>
+  <li><a href="#load-recommenderlab" id="toc-load-recommenderlab" class="nav-link" data-scroll-target="#load-recommenderlab">Load recommenderlab</a></li>
+  <li><a href="#exploratory-analysis-of-the-movielense-data" id="toc-exploratory-analysis-of-the-movielense-data" class="nav-link" data-scroll-target="#exploratory-analysis-of-the-movielense-data">Exploratory Analysis of the Movielense data</a></li>
+  <li><a href="#recommender-algorithms-available" id="toc-recommender-algorithms-available" class="nav-link" data-scroll-target="#recommender-algorithms-available">Recommender Algorithms Available</a></li>
+  <li><a href="#exploring-user-based-collaborative-filtering" id="toc-exploring-user-based-collaborative-filtering" class="nav-link" data-scroll-target="#exploring-user-based-collaborative-filtering">Exploring User-based Collaborative Filtering</a>
+  <ul class="collapse">
+  <li><a href="#normalize-the-data" id="toc-normalize-the-data" class="nav-link" data-scroll-target="#normalize-the-data">Normalize the data</a></li>
+  <li><a href="#how-the-ubcf-algorithm-works" id="toc-how-the-ubcf-algorithm-works" class="nav-link" data-scroll-target="#how-the-ubcf-algorithm-works">How the UBCF algorithm works</a></li>
+  <li><a href="#set-up-a-model-training-evaluation-scheme" id="toc-set-up-a-model-training-evaluation-scheme" class="nav-link" data-scroll-target="#set-up-a-model-training-evaluation-scheme">Set Up a Model Training &amp; Evaluation Scheme</a></li>
+  <li><a href="#evaluate-predictive-performance" id="toc-evaluate-predictive-performance" class="nav-link" data-scroll-target="#evaluate-predictive-performance">Evaluate Predictive Performance</a></li>
+  </ul></li>
+  <li><a href="#additional-aspects-to-explore-not-yet-covered" id="toc-additional-aspects-to-explore-not-yet-covered" class="nav-link" data-scroll-target="#additional-aspects-to-explore-not-yet-covered">Additional Aspects to Explore not yet Covered</a></li>
+  <li><a href="#strengs-weaknesses-of-neighborhood-methods" id="toc-strengs-weaknesses-of-neighborhood-methods" class="nav-link" data-scroll-target="#strengs-weaknesses-of-neighborhood-methods">Strengs &amp; Weaknesses of Neighborhood Methods</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">RecommenderLab Tutorial</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Brandon Hoeft </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 6, 2017</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This is an introduction to building Recommender Systems using R. The major CRAN approved package available in R with developed algorithms is called <code>recommenderlab</code> by Michael Hahsler. Latest <a href="https://cran.r-project.org/web/packages/recommenderlab/recommenderlab.pdf">documentation</a> and a <a href="https://cran.r-project.org/web/packages/recommenderlab/vignettes/recommenderlab.pdf">vignette</a> are both available for exploration. The code examples provided in this exploratory analysis came primarily through the material on Collaborative Filtering algorithms from this package, explored in the book <a href="https://smile.amazon.com/Building-Recommendation-System-Suresh-Gorakala/dp/1783554495/ref=sr_1_1?ie=UTF8&amp;qid=1507314554&amp;sr=8-1&amp;keywords=building+a+recommendation+system+R"><em>Building a Recommendation System with R</em></a>, by Suresh K. Gorakala and Michele Usuelli.</p>
+</section>
+<section id="collaborative-filtering" class="level2">
+<h2 class="anchored" data-anchor-id="collaborative-filtering">Collaborative Filtering</h2>
+<p>The focus of this analysis will center around <a href="https://en.wikipedia.org/wiki/Collaborative_filtering"><em>collaborative filtering</em></a>, one of the earliest forms of recommendation systems. The earliest developed forms of these algorithms are also known as <em>neighborhood based</em> or <em>memory based</em> algorithms, described below. If using machine learning or statistical model methods, they’re referred to as <em>model based</em> algorithms. The basic idea of collaborative filtering is that given a large database of ratings profiles for individual users on what they rated/purchased, we can impute or predict ratings on items not rated/purchased by them, forming the basis of recommendation scores or top-N recommended items.</p>
+<p>Under <em>user-based collaborative filtering</em>, this memory-based method works under the assumption that users with similar item tastes will rate items similarly. Therefore, the missing ratings for a user can be predicted by finding other similar users (a neighborhood). Within the neighborhood, we can aggregate the ratings of these neighbors on items unknown to the user, as basis for a prediction. We’ll explore this one in detail in sections below.</p>
+<p>An inverted approach to nearest neighbor based recommendations is <em>item-based collaborative filtering</em>. Instead of finding the most similar users to each individual, an algorithm assesses the similarities between the items that are correlated in their ratings or purchase profile amongst all users.</p>
+<p>Some additional starter articles to learning more about collaborative filtering can be found <a href="https://www.ibm.com/developerworks/library/os-recommender1/">here</a> and here(http://recommender-systems.org/collaborative-filtering/).</p>
+</section>
+<section id="load-recommenderlab" class="level2">
+<h2 class="anchored" data-anchor-id="load-recommenderlab">Load recommenderlab</h2>
+<p>Let’s load the package and explore some of the datasets included in it. Recommenderlab is implemented using classes in the <strong>S4</strong> class system, so it’s notation is a little different from most <code>r</code> packages, which are often written using the <strong>S3</strong> object class system.</p>
+<p>Some of the preloaded datasets that come with <code>recommenderlab</code> for learning and exploring.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Jester dataset (5k sample)"               
+[2] "Jester dataset (5k sample)"               
+[3] "Anonymous web data from www.microsoft.com"
+[4] "MovieLense Dataset (100k)"                
+[5] "MovieLense Dataset (100k)"                
+[6] "MovieLense Dataset (100k)"                </code></pre>
+</div>
+</div>
+<p>We’ll work with the already available <em>Movielense</em> dataset.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "realRatingMatrix"
+attr(,"package")
+[1] "recommenderlab"</code></pre>
+</div>
+</div>
+<p>It is formatted as a <code>realRatingMatrix</code> class already, an object class created within <code>recommenderlab</code> for efficient storage of user-item ratings matrices. It’s been optimized for storing sparse matrices, where almost all of the elements are empty. As an example, compare the object size of <em>Movielense</em> as a <code>realRatingMatrix</code> vs.&nbsp;a <code>matrix</code>.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>1.41 MB</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>12.76 MB</code></pre>
+</div>
+</div>
+<p>The <code>realRatingMatrix</code> for this particular dataset is about 9 times more efficient in conserving memory than a traditional matrix object.</p>
+<p>Some of the different functions that can be applied to the <code>realRatingMatrix</code> are:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] [                      [&lt;-                    binarize              
+ [4] calcPredictionAccuracy coerce                 colCounts             
+ [7] colMeans               colSds                 colSums               
+[10] denormalize            dim                    dimnames              
+[13] dimnames&lt;-             dissimilarity          evaluationScheme      
+[16] getData.frame          getList                getNormalize          
+[19] getRatingMatrix        getRatings             getTopNLists          
+[22] hasRating              image                  normalize             
+[25] nratings               Recommender            removeKnownRatings    
+[28] rowCounts              rowMeans               rowSds                
+[31] rowSums                sample                 show                  
+[34] similarity            
+see '?methods' for accessing help and source code</code></pre>
+</div>
+</div>
+</section>
+<section id="exploratory-analysis-of-the-movielense-data" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-analysis-of-the-movielense-data">Exploratory Analysis of the Movielense data</h2>
+<p>Some initial information about the dimensions and ratings count within Movielense matrix.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>943 x 1664 rating matrix of class 'realRatingMatrix' with 99392 ratings.</code></pre>
+</div>
+</div>
+<p>A preview of the first 10 users (rows of matrix) shows their count of movie ratings out of the 1664 available movies in the dataset.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  1   2   3   4   5   6   7   8   9  10 
+271  61  51  23 175 208 400  59  22 184 </code></pre>
+</div>
+</div>
+<p>Below is a preview of the ratings matrix of users and their ratings. Rows represent the user indexes.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>10 x 4 sparse Matrix of class "dgCMatrix"
+   Toy Story (1995) GoldenEye (1995) Four Rooms (1995) Get Shorty (1995)
+1                 5                3                 4                 3
+2                 4                .                 .                 .
+3                 .                .                 .                 .
+4                 .                .                 .                 .
+5                 4                3                 .                 .
+6                 4                .                 .                 .
+7                 .                .                 .                 5
+8                 .                .                 .                 .
+9                 .                .                 .                 .
+10                4                .                 .                 4</code></pre>
+</div>
+</div>
+<p>For a particular user such as User 1, they gave an average rating of 3.61. 10 of the movies rated by them are shown below.</p>
+<p>The <code>getRatings</code> function returns the non-missing ratings values from the matrix as a numeric vector. The following histogram shows the distribution of all movie ratings in the dataset. We can see that ratings typically skew higher, centered around a median rating of 4.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">getRatings</span>(movie_r))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00    3.00    4.00    3.53    4.00    5.00 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">ratings =</span> <span class="fu">getRatings</span>(movie_r)) <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(ratings)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">width =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Movielense Ratings Distribution'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="cf_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Using our <code>realRatingMatrix</code> object, we can also extract row counts to visualize distributions of the number of reviews given by each user. Below, the density is plotted along the y-axis instead of the raw counts, to give an idea of the the proportional frequency of each unit of each discrete bin in relation to the whole data set. The overall right-skewed distribution is indicative that most reviewers give very few overall reviews.</p>
+<p>In terms of understanding the density values, this histogram has bin-width set to 20; with a density of close to 0.01125 for the first bin, the tallest bar this bin represents approximately 0.01125 x 10 units per bin = 0.225 total proportion of the individual reviewers in the data. In other words, 22.5% of the 943 in the data have given fewer than 10 reviews.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   19.0    32.0    64.0   105.4   147.5   735.0 </code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="cf_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Additionally, we can take a look at the average number of ratings given per each of the 1664 movies. Again, the right-skewed distribution here is indicative that the majority of films in the dataset are scarcely reviewed and there are a handful of movies with very high reviews, probably reflecting those films in the dataset with mass commercial appeal.</p>
+<p>With a median number of reviews of 27 per user and 1664 different movies available to rate, we know that the data is sparse with a lot of users not having rated most of the movies available.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00    7.00   27.00   59.73   80.00  583.00 </code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="cf_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Can also visually explore summary(rowMeans(movie_r)) for average rating given per user.</strong></p>
+<p><strong>Can also visually explore summary(colMeans(movie_r)) for average rating given per movie.</strong></p>
+</section>
+<section id="recommender-algorithms-available" class="level2">
+<h2 class="anchored" data-anchor-id="recommender-algorithms-available">Recommender Algorithms Available</h2>
+<p>The recommender algorithms are stored in a registry object called <code>recommenderRegistry</code>. We can get a look at the different models based on the different matrix types.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "HYBRID_realRatingMatrix"         "HYBRID_binaryRatingMatrix"      
+ [3] "ALS_realRatingMatrix"            "ALS_implicit_realRatingMatrix"  
+ [5] "ALS_implicit_binaryRatingMatrix" "AR_binaryRatingMatrix"          
+ [7] "IBCF_binaryRatingMatrix"         "IBCF_realRatingMatrix"          
+ [9] "LIBMF_realRatingMatrix"          "POPULAR_binaryRatingMatrix"     
+[11] "POPULAR_realRatingMatrix"        "RANDOM_realRatingMatrix"        
+[13] "RANDOM_binaryRatingMatrix"       "RERECOMMEND_realRatingMatrix"   
+[15] "RERECOMMEND_binaryRatingMatrix"  "SVD_realRatingMatrix"           
+[17] "SVDF_realRatingMatrix"           "UBCF_binaryRatingMatrix"        
+[19] "UBCF_realRatingMatrix"          </code></pre>
+</div>
+</div>
+<p>Since our matrix is a real ratings matrix, we’ll call the algorithms available for working on numeric ratings based review data as stored in the <code>realRatingMatrix</code>. Here, I’ve pulled the descriptions of each of the algorithms available for working with real user ratings data.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                                                                                   HYBRID_realRatingMatrix 
+                                            "Hybrid recommender that aggegates several recommendation strategies using weighted averages." 
+                                                                                                                      ALS_realRatingMatrix 
+                            "Recommender for explicit ratings based on latent factors, calculated by alternating least squares algorithm." 
+                                                                                                             ALS_implicit_realRatingMatrix 
+                               "Recommender for implicit data based on latent factors, calculated by alternating least squares algorithm." 
+                                                                                                                     IBCF_realRatingMatrix 
+                                                                                "Recommender based on item-based collaborative filtering." 
+                                                                                                                    LIBMF_realRatingMatrix 
+"Matrix factorization with LIBMF via package recosystem (https://cran.r-project.org/web/packages/recosystem/vignettes/introduction.html)." 
+                                                                                                                  POPULAR_realRatingMatrix 
+                                                                                                   "Recommender based on item popularity." 
+                                                                                                                   RANDOM_realRatingMatrix 
+                                                                                          "Produce random recommendations (real ratings)." 
+                                                                                                              RERECOMMEND_realRatingMatrix 
+                                                                                        "Re-recommends highly rated items (real ratings)." 
+                                                                                                                      SVD_realRatingMatrix 
+                                                                     "Recommender based on SVD approximation with column-mean imputation." 
+                                                                                                                     SVDF_realRatingMatrix 
+                                  "Recommender based on Funk SVD with gradient descend (https://sifter.org/~simon/journal/20061211.html)." 
+                                                                                                                     UBCF_realRatingMatrix 
+                                                                                "Recommender based on user-based collaborative filtering." </code></pre>
+</div>
+</div>
+</section>
+<section id="exploring-user-based-collaborative-filtering" class="level2">
+<h2 class="anchored" data-anchor-id="exploring-user-based-collaborative-filtering">Exploring User-based Collaborative Filtering</h2>
+<p>In the algorithms registry, the last algorithm provided in the listing is the one we’ll use to explore user-based collaborative filtering (UBCF) to fit the UBCF algorithm to the <code>realRatingMatrix</code> of MovieLense reviews data. Information about this algorithm per the registry:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ubcf_model_description <span class="ot">&lt;-</span> <span class="fu">tail</span>(recommenderRegistry<span class="sc">$</span><span class="fu">get_entries</span>(<span class="at">dataType =</span> <span class="st">"realRatingMatrix"</span>), <span class="dv">1</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>ubcf_model_description</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$UBCF_realRatingMatrix
+Recommender method: UBCF for realRatingMatrix Description: Recommender
+  based on user-based collaborative filtering. Reference: NA
+Parameters:
+    method nn sample weighted normalize min_matching_items min_predictive_items
+1 "cosine" 25  FALSE     TRUE  "center"                  0                    0</code></pre>
+</div>
+</div>
+<p>There are 4 parameters to account for with this model as described above:</p>
+<ul>
+<li><p><strong>method</strong>: this is the type of similarity metric to calculate similarity between users real ratings profile. Cosine similarity, Pearson correlation coefficient, and Jaccard similarity are available options. The first two are not good options if using unary ratings, but work well for this scenario.</p></li>
+<li><p><strong>nn</strong>: this parameter sets the neighborhood of most similar users to consider for each user profile. the ratings profiles of the k nearest neighbors will be the basis for making predictions on a users unrated items profile.</p></li>
+<li><p><strong>sample</strong>: a logical value to indicate whether the data should be sampled for train/test. Probably best to explicitely set a reproducible seed and sample the data before running the model.</p></li>
+<li><p><strong>normalize</strong>: how to normalize real ratings provided by different users. This is crucially important b/c all users have a different bias in how they tend to rate items. This can be done by passing a value to this parameter inside the algorithm or applied to the matrix before any modeling too. See <code>?normalize</code> for additional details.</p></li>
+</ul>
+<section id="normalize-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="normalize-the-data">Normalize the data</h3>
+<p>Since we’re working with explicit real ratings of users, we need to acocunt for individual row bias of each user and make sure that all ratings are scaled similarly. The implication of not doing this could be potentially disasterous on new predicted ratings for any given user, dependent upon the different ratings bias of their k nearest neighbors.</p>
+<p>User rating <em>zero mean centering</em> will be used for modeling, where each user’s vector of ratings is subtracted by its own mean to center the mean at zero. Z-scoring is an alternative method available too that additionally divides each user’s rating by its standard deviation.</p>
+<p>** maybe visualize the distribution of user ratings here too after normalization vs.&nbsp;before normalization **</p>
+</section>
+<section id="how-the-ubcf-algorithm-works" class="level3">
+<h3 class="anchored" data-anchor-id="how-the-ubcf-algorithm-works">How the UBCF algorithm works</h3>
+<ol type="1">
+<li>Using <a href="https://en.wikipedia.org/wiki/Cosine_similarity">cosine similarity</a>, figure out how similar each user is to each other.</li>
+</ol>
+<ol type="i">
+<li>for each user, identify the <em>k</em> most similar users. Here, <em>k</em> parameter was the 10 most similar users who rated common items most similarly.</li>
+</ol>
+<ol start="2" type="1">
+<li>Per item, average the ratings by each user’s <em>k</em> most similar users.</li>
+</ol>
+<ol type="i">
+<li>weight the average ratings based on similarity score of each user whose rated the item. Similarity score equals weight, or</li>
+<li>use any of the pythagorean averages, as suits the business case (arithmetic, geometric, harmonic)</li>
+</ol>
+<ol start="3" type="1">
+<li>Select a Top-N recommendations threshold.</li>
+</ol>
+</section>
+<section id="set-up-a-model-training-evaluation-scheme" class="level3">
+<h3 class="anchored" data-anchor-id="set-up-a-model-training-evaluation-scheme">Set Up a Model Training &amp; Evaluation Scheme</h3>
+<p>The next step is to set up a model training and testing scheme. There are many ways to go about doing this. The simplest is to build the recommender on a subset of training records, and test the model on a different subset of testing records that were withheld from the modeling process. We’ll use the <code>evaluationScheme</code> function within <code>recommenderLab</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>train_proportion <span class="ot">&lt;-</span> .<span class="dv">75</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># shouldn't keep n rec. items &gt; min(rowCounts(movie_r))</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(<span class="fu">rowCounts</span>(movie_r))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 19</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>items_per_test_user_keep <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># What's a good rating for a binary split?</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>good_threshold <span class="ot">&lt;-</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The first thing to do is prepare the data, and set parameters for how the recommender algorithm will train the model. The scheme has been setup to use a single test dataset, train the data on a 75% random sample of the data. In the test set,<br>
+10 items per user will be given to the recommender algorithm and the remaining test user’s items will be held out for computing rating prediction error.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Building a Recommender System with R by Gorakala and Usuelli. Ch.4 pp 77 - 83</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>model_train_scheme <span class="ot">&lt;-</span> movie_r <span class="sc">%&gt;%</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">evaluationScheme</span>(<span class="at">method =</span> <span class="st">'split'</span>, <span class="co"># single train/test split</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">train =</span> train_proportion, <span class="co"># proportion of rows to train.</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">given =</span> items_per_test_user_keep, <span class="co"># shouldn't keep n rec. items &gt; min(rowCounts(movie_r))</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">goodRating =</span> good_threshold, <span class="co"># for binary classifier analysis.</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">k =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Having set our <code>evaluationScheme</code> and stored it in an object called <em>model_train_scheme</em>, we can fit a UBCF recommender system model.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Building a Recommender System with R by Gorakala and Usuelli. Ch.4 pp 84</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>model_params <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">method =</span> <span class="st">"cosine"</span>,</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">nn =</span> <span class="dv">10</span>, <span class="co"># find each user's 10 most similar users.</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sample =</span> <span class="cn">FALSE</span>, <span class="co"># already did this.</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">normalize =</span> <span class="st">"center"</span>)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">getData</span>(model_train_scheme, <span class="st">"train"</span>) <span class="sc">%&gt;%</span> <span class="co">#only fit on the 75% training data.</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Recommender</span>(<span class="at">method =</span> <span class="st">"UBCF"</span>, <span class="at">parameter =</span> model_params)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="evaluate-predictive-performance" class="level3">
+<h3 class="anchored" data-anchor-id="evaluate-predictive-performance">Evaluate Predictive Performance</h3>
+<p>Having built the model, next step is to use the holdout testing data to evaluate the model’s performance. The <code>getData</code> gives us access to different datasets in the model training scheme. We used the <em>train</em> data to build the model. There is also <em>known</em> and <em>unknown</em> test data available for evaluation. The <em>known</em> portion returns the specified 10 items per test user to give to the recommender algorithm. These <em>known</em> records per test user are withheld from predicting test performance; instead they are used to calibrate the test user’s similarity to the trained records, identify and weight its nearest <em>k</em> neighbors, and then make item ratings or recommendation predictions. The predicted ratings or recommended items from these <em>known</em> data points per test user are compared to the remaining hidden items for each test user These <em>unknown</em> test user items therefore will be used to compute prediction error of the model.</p>
+<p>Since testing the algorithm with new data requires a known battery of item ratings to calibrate each test user and make recommendations on new items, and an unknown portion of ratings that can be used to calculate prediction error of these resulting recommendations, it’s important that the <em>given</em> parameter is less than the minimum number of rated items available per user, so that <em>unknown</em> test data is available for every test case to measure prediction error of ratings.</p>
+<p>Next, we use the <em>known</em> part of the test users’ item data (10 items for each user) to make predicted ratings for new items of the test user that were hidden from the algorithm. We can also predict top N items instead of the ratings if that is preferred.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5.5 - 5.6. Evaluation of predicted ratings in recommenderLab vignette. can use n = for predicting TopN or type = for predicting ratings.</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># https://cran.r-project.org/web/packages/recommenderlab/vignettes/recommenderlab.pdf</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>model1_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(model1, <span class="fu">getData</span>(model_train_scheme, <span class="st">"known"</span>), <span class="at">type =</span> <span class="st">"ratings"</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>model1_pred</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>236 x 1664 rating matrix of class 'realRatingMatrix' with 104911 ratings.</code></pre>
+</div>
+</div>
+<p>Now we can test the predicion error of model 1 on the <em>unknown</em> test user ratings using the <code>calcPredictionAccuracy</code> method. Three metrics for ratings test error are available: root mean squared error, mean squared error, or mean absolute error. The results below focus on RMSE with the errors calculated per test user on their <em>unknown</em> data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>test_error <span class="ot">&lt;-</span> <span class="fu">calcPredictionAccuracy</span>(model1_pred, <span class="fu">getData</span>(model_train_scheme, <span class="st">"unknown"</span>), <span class="at">byUser =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(test_error)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        RMSE       MSE       MAE
+1  1.4750355 2.1757298 1.1711856
+3  1.4902335 2.2207958 1.1688414
+7  1.4256748 2.0325486 1.1293398
+9  1.2841932 1.6491522 1.0531216
+12 0.9159439 0.8389532 0.6377035
+15 1.4688890 2.1576350 1.2185120</code></pre>
+</div>
+</div>
+<p>Let’s visualize the distribution of the average RMSE of new predicted ratings for each 236 test user.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="cf_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="additional-aspects-to-explore-not-yet-covered" class="level2">
+<h2 class="anchored" data-anchor-id="additional-aspects-to-explore-not-yet-covered">Additional Aspects to Explore not yet Covered</h2>
+<ul>
+<li><p>In addition to fitting and testing a single model, this process can be repeated for different UBCF methods too. Candidate models can be evaluated based on the best RMSE for test users. Once a final model is selected, it can be fit on the entire dataset and used to make new recommendations going forward.</p></li>
+<li><p>Another aspect to explore is item based collaborative filtering (IBCF), which can generate similar predictions to UBCF methods. It will be interesting to see which one performs better on the other.</p></li>
+<li><p>Additionally, knowing the ** Top N ** recommendations may be more important than predicting a rating. The predicted ratings themselves could technically be sorted in descending order and ranked. However, this can be done more explicitely in the modeling process by using a cutoff value for a good rating threshold, building a ** Top N ** recommender model, and seeing how many good rated items from the <em>unknown</em> test user data that the model can identify. This becomes more of a traditional classification problem where ROC curves and analysis of True positives, False Positives, False Negatives, and True Negative recommendations can be analyzed. See section 5.7 (p.26) of the <code>recommenderLab</code> <a href="https://cran.r-project.org/web/packages/recommenderlab/vignettes/recommenderlab.pdf">vignette</a> for details.</p></li>
+</ul>
+</section>
+<section id="strengs-weaknesses-of-neighborhood-methods" class="level2">
+<h2 class="anchored" data-anchor-id="strengs-weaknesses-of-neighborhood-methods">Strengs &amp; Weaknesses of Neighborhood Methods</h2>
+<p>From my initial learning about collaborative filtering methods so far, some of my current understanding on their strengths, weaknesses, and data input requirements.</p>
+<ul>
+<li><p><em>Strengths</em>: simple to implement, and recommendations are easy to explain to user. Transparency about the recommendation to a user can be a great boost to the user’s confidence in trusting a rating.</p></li>
+<li><p><em>Weaknesses</em>: these algorithms do not too work well on very sparse ratings matrices. Additionally, they are computationally expensive as the entire user database needs to be processed as the basis of forming recommendations. These algorithms will not work from a cold start since a new user has no historic data profile or ratings for the algorithm to start from.</p></li>
+<li><p><em>Data Requirements</em>: a user ratings profile, containing items they’ve rated/clicked/purchased. A “rating” can be defined however it fits the business use case.</p></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/thiyangt\.github\.io\/Data\.Mining\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

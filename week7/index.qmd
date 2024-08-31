@@ -1,0 +1,215 @@
+---
+title: "Collaborative Filtering"
+subtitle: ""
+author: "Dr. Thiyanga S. Talagala <br/>  Department of Statistics, Faculty of Applied Sciences <br/> University of Sri Jayewardenepura, Sri Lanka"
+format: 
+  revealjs:
+    width: 2000
+    height: 1500
+    margin: 0.1
+    fontsize: 20pt
+    theme: [simple, custom.scss]
+    transition: slide
+    background-transition: fade
+    slide-number: true
+    show-slide-number: all
+    title-slide-attributes: 
+      data-background-color: "#081d58"
+      data-background-image: none
+---
+
+## What is collaborative filtering?
+
+-   popular recommendation techniques, often used in recommendation systems to provide personalized recommendations to users.
+
+------------------------------------------------------------------------
+
+## Why use personalized recommendation systems?
+
+-   Users are more likely to make purchases or take action when the recommendations align closely with their tastes, leading to higher conversion rates.
+
+-   Personalized recommendations encourage users to spend more time on the platform, as they are more likely to discover things they enjoy or need.
+
+-   Cross-Selling and Upselling: Recommendation systems can suggest complementary products, encouraging users to buy more or upgrade their selections.
+
+------------------------------------------------------------------------
+
+## Why use personalized recommendation systems?
+
+-   Users are more likely to return to platforms where they feel understood and catered to, which increases retention rates.
+
+-   users quickly find what they’re looking for by filtering out irrelevant option.
+
+-   These systems help users discover new content or products they might not have found on their own but are highly likely to enjoy.
+
+-   Sales Boost: Personalized recommendations drive more sales by surfacing items that users are likely to purchase, which can increase average order value (AOV) and overall revenue.
+
+---
+
+![](cf1.png)
+---
+
+# User-based Collaborative Filtering
+
+------------------------------------------------------------------------
+
+![](cf2.png)
+
+------------------------------------------------------------------------
+
+![](cf3.png)
+
+------------------------------------------------------------------------
+
+![](cf4.png)
+
+------------------------------------------------------------------------
+
+# Item-based Collaborative Filtering
+
+------------------------------------------------------------------------
+
+![](cf5.png)
+
+------------------------------------------------------------------------
+
+![](cf6.png)
+
+---
+
+## Example
+
+```{r}
+ID <- c("C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10")
+M1 <- c(4, 4, 5, 3, 4, 3, 3, 4, 4, 3)
+M2 <- c(1, rep(NA, 3), 5, rep(NA, 5))
+M3 <- c(rep(NA, 3), 1, rep(NA, 6))
+M4 <- c(rep(NA, 3), 4, rep(NA, 6))
+M5 <- c(3, rep(NA, 9))
+M6 <- c(3, rep(NA, 2), 4, NA, NA, 2, NA, NA, NA)
+M7 <- c(4, rep(NA, 2), 5, NA, 4, 4, NA, 3, NA)
+M8 <- c(5, rep(NA, 4), 4, rep(NA, 4))
+M9 <- c(rep(NA, 6), 3, rep(NA, 3))
+a <- data.frame(ID, M1, M2, M3, M4, M5, M6, M7, M8, M9)
+library(knitr)
+kable(a)
+```
+
+
+---
+
+## User-based Collaborative Filtering: In-class calculations with example data
+
+Step 1: Calculate user similarity
+
+  - Pearson's correlation similarity
+  
+  - Cosine similarity
+  
+Step 2: Locate nearest neighbor
+
+Step 3: Determine rating prediction
+
+---
+
+## Item-based Collaborative Filtering: In-class calculations with example data
+
+Step 1: Calculate item similarity using user-item rating
+
+  - Pearson's correlation similarity
+  
+  - Cosine similarity
+  
+Step 2: Locate nearest neighbor
+
+Step 3: Determine rating prediction
+
+---
+
+## Collaborative Filtering
+
+**Strengths:**
+
+- Effective at capturing complex patterns and preferences.
+
+- Can recommend items the user hasn't explicitly rated or interacted with.
+
+**Weaknesses:**
+
+- Struggles with new users or items (cold-start problem).
+
+- Requires large datasets to work well.
+
+---
+
+# Types of Cold-Start Problems
+
+---
+
+## New User Problem
+
+When a new user joins a platform, the system has little or no data about their preferences or past interactions, making it difficult to recommend items accurately.
+
+
+
+> Example:
+
+A new user signs up for Netflix. Since they haven't watched or rated any shows or movies yet, Netflix has no data to personalize recommendations for them.
+
+---
+
+## New Item Problem
+
+When a new item (e.g., product, movie, or song) is added to the platform, there are no user interactions (ratings, clicks, purchases) with it. As a result, the system struggles to recommend this item to users because it doesn't know which users might like it.
+
+
+> Example 
+
+An online bookstore adds a newly released book. Since no users have rated or bought the book yet, it's challenging to recommend it to anyone.
+
+---
+
+## New User-Item Combination Problem
+
+Even for existing users and items, the system may encounter cold-start issues when it hasn't observed any interaction between a specific user and a specific item. This occurs frequently when a system handles a large inventory.
+
+> Example: 
+
+A regular customer on an e-commerce site is shown a new category of products they haven't browsed or purchased before, leaving the system unsure of how to make recommendations within this category.
+
+---
+
+The cold-start problem arises when the system lacks historical interaction data for users or items. Addressing it often requires combining multiple techniques, such as content-based filtering, onboarding processes, and hybrid models, to make relevant recommendations even with limited information.
+
+---
+
+## Content-Based Filtering
+
+Recommends items based on the characteristics or features of the items themselves (e.g., keywords, genres, tags) and matches them with user profiles.
+
+---
+## Content-Based Filtering
+
+> Strengths:
+
+- Works well with new users, as long as item features are known.
+
+- Provides explainable recommendations (e.g., "You were recommended this movie because it has the same genre as another movie you liked").
+
+> Weaknesses:
+
+- Limited to recommending items similar to those the user has already interacted with.
+
+- Harder to surprise the user with novel items.
+
+---
+
+## Model-based methods 
+
+- Aim to predict the likelihood of a user interacting with an item (e.g., rating, purchase, click) based on learned patterns from the data. 
+
+- These models are designed to generalize from the existing user-item interactions, making predictions about future interactions
+
+---
+
+# Cont. Lab 7 session
