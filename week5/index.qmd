@@ -20,59 +20,52 @@ format:
 
 ## Market Basket Analysis
 
-- Affinity analysis
+-   Affinity analysis
 
-- Unsupervised learning
+-   Unsupervised learning
 
-- Frequent itemset mining: To discover which groups of products tend to be purchased together.
+-   Frequent itemset mining: To discover which groups of products tend to be purchased together.
 
----
-
+------------------------------------------------------------------------
 
 # Basic concepts
 
-
----
+------------------------------------------------------------------------
 
 ## Transaction dataset
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-
 ```{r, echo=FALSE}
 TID <- 1:9
 Items <- c("i1, i2, i5", "i2, i4", "i2, i3", "i1, i2, i4", "i1, i3", "i2, i3", "i1, i3", "i1, i2, i3, i5", "i1, i2, i3")
 df <- data.frame(TID, Items)
 df |> knitr::kable()
 ```
-
 :::
 
 ::: {.column width="50%"}
-
 Item set: Set of items
-
+:::
 :::
 
-::::
----
+------------------------------------------------------------------------
 
 ## Suppose we have 100 items. Find the total number of itemsets.
 
----
+------------------------------------------------------------------------
 
-## Association rule 
+## Association rule
 
 $$ Milk \Rightarrow Bread \text{ [Support = 2%, Confidence = 60%]}$$
 
-- IF (Antecedent)
+-   IF (Antecedent)
 
-- THEN (Consequent)
+-   THEN (Consequent)
 
-- Support and Confidence measures the strength of association between antecedent and consequent itemset.
+-   Support and Confidence measures the strength of association between antecedent and consequent itemset.
 
----
+------------------------------------------------------------------------
 
 ## Apriori algorithm
 
@@ -80,51 +73,43 @@ Desired support count: 2 (22%)
 
 Desired confidence: 70%
 
----
+------------------------------------------------------------------------
 
 # Step 1:
 
 Translate data into binary incidence matrix format.
 
----
+------------------------------------------------------------------------
 
 ## Transaction dataset
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="30%"}
-
 ```{r, echo=FALSE}
 TID <- 1:9
 Items <- c("i1, i2, i5", "i2, i4", "i2, i3", "i1, i2, i4", "i1, i3", "i2, i3", "i1, i3", "i1, i2, i3, i5", "i1, i2, i3")
 df <- data.frame(TID, Items)
 df |> knitr::kable()
 ```
-
 :::
 
 ::: {.column width="70%"}
-
-
-
+:::
 :::
 
-::::
-
----
+------------------------------------------------------------------------
 
 ## Step 2:
 
 Select itemsets where the minimum support count is 2.
 
-
----
+------------------------------------------------------------------------
 
 ## Step 3:
 
 Generate Associate Rules: Compute confidence and lift
 
----
+------------------------------------------------------------------------
 
 ## Confidence and Lift
 

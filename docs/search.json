@@ -1,0 +1,226 @@
+[
+  {
+    "objectID": "week7/index.html#what-is-collaborative-filtering",
+    "href": "week7/index.html#what-is-collaborative-filtering",
+    "title": "Collaborative Filtering",
+    "section": "What is collaborative filtering?",
+    "text": "What is collaborative filtering?\n\npopular recommendation techniques, often used in recommendation systems to provide personalized recommendations to users."
+  },
+  {
+    "objectID": "week7/index.html#why-use-personalized-recommendation-systems",
+    "href": "week7/index.html#why-use-personalized-recommendation-systems",
+    "title": "Collaborative Filtering",
+    "section": "Why use personalized recommendation systems?",
+    "text": "Why use personalized recommendation systems?\n\nUsers are more likely to make purchases or take action when the recommendations align closely with their tastes, leading to higher conversion rates.\nPersonalized recommendations encourage users to spend more time on the platform, as they are more likely to discover things they enjoy or need.\nCross-Selling and Upselling: Recommendation systems can suggest complementary products, encouraging users to buy more or upgrade their selections."
+  },
+  {
+    "objectID": "week7/index.html#why-use-personalized-recommendation-systems-1",
+    "href": "week7/index.html#why-use-personalized-recommendation-systems-1",
+    "title": "Collaborative Filtering",
+    "section": "Why use personalized recommendation systems?",
+    "text": "Why use personalized recommendation systems?\n\nUsers are more likely to return to platforms where they feel understood and catered to, which increases retention rates.\nusers quickly find what they’re looking for by filtering out irrelevant option.\nThese systems help users discover new content or products they might not have found on their own but are highly likely to enjoy.\nSales Boost: Personalized recommendations drive more sales by surfacing items that users are likely to purchase, which can increase average order value (AOV) and overall revenue."
+  },
+  {
+    "objectID": "week7/index.html#example",
+    "href": "week7/index.html#example",
+    "title": "Collaborative Filtering",
+    "section": "Example",
+    "text": "Example\n\n\n\n\n\nID\nM1\nM2\nM3\nM4\nM5\nM6\nM7\nM8\nM9\n\n\n\n\nC1\n4\n1\nNA\nNA\n3\n3\n4\n5\nNA\n\n\nC2\n4\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nC3\n5\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nC4\n3\nNA\n1\n4\nNA\n4\n5\nNA\nNA\n\n\nC5\n4\n5\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nC6\n3\nNA\nNA\nNA\nNA\nNA\n4\n4\nNA\n\n\nC7\n3\nNA\nNA\nNA\nNA\n2\n4\nNA\n3\n\n\nC8\n4\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nC9\n4\nNA\nNA\nNA\nNA\nNA\n3\nNA\nNA\n\n\nC10\n3\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA"
+  },
+  {
+    "objectID": "week7/index.html#user-based-collaborative-filtering-in-class-calculations-with-example-data",
+    "href": "week7/index.html#user-based-collaborative-filtering-in-class-calculations-with-example-data",
+    "title": "Collaborative Filtering",
+    "section": "User-based Collaborative Filtering: In-class calculations with example data",
+    "text": "User-based Collaborative Filtering: In-class calculations with example data\nStep 1: Calculate user similarity\n\nPearson’s correlation similarity\nCosine similarity\n\nStep 2: Locate nearest neighbor\nStep 3: Determine rating prediction"
+  },
+  {
+    "objectID": "week7/index.html#item-based-collaborative-filtering-in-class-calculations-with-example-data",
+    "href": "week7/index.html#item-based-collaborative-filtering-in-class-calculations-with-example-data",
+    "title": "Collaborative Filtering",
+    "section": "Item-based Collaborative Filtering: In-class calculations with example data",
+    "text": "Item-based Collaborative Filtering: In-class calculations with example data\nStep 1: Calculate item similarity using user-item rating\n\nPearson’s correlation similarity\nCosine similarity\n\nStep 2: Locate nearest neighbor\nStep 3: Determine rating prediction"
+  },
+  {
+    "objectID": "week7/index.html#collaborative-filtering",
+    "href": "week7/index.html#collaborative-filtering",
+    "title": "Collaborative Filtering",
+    "section": "Collaborative Filtering",
+    "text": "Collaborative Filtering\nStrengths:\n\nEffective at capturing complex patterns and preferences.\nCan recommend items the user hasn’t explicitly rated or interacted with.\n\nWeaknesses:\n\nStruggles with new users or items (cold-start problem).\nRequires large datasets to work well."
+  },
+  {
+    "objectID": "week7/index.html#new-user-problem",
+    "href": "week7/index.html#new-user-problem",
+    "title": "Collaborative Filtering",
+    "section": "New User Problem",
+    "text": "New User Problem\nWhen a new user joins a platform, the system has little or no data about their preferences or past interactions, making it difficult to recommend items accurately.\n\nExample:\n\nA new user signs up for Netflix. Since they haven’t watched or rated any shows or movies yet, Netflix has no data to personalize recommendations for them."
+  },
+  {
+    "objectID": "week7/index.html#new-item-problem",
+    "href": "week7/index.html#new-item-problem",
+    "title": "Collaborative Filtering",
+    "section": "New Item Problem",
+    "text": "New Item Problem\nWhen a new item (e.g., product, movie, or song) is added to the platform, there are no user interactions (ratings, clicks, purchases) with it. As a result, the system struggles to recommend this item to users because it doesn’t know which users might like it.\n\nExample\n\nAn online bookstore adds a newly released book. Since no users have rated or bought the book yet, it’s challenging to recommend it to anyone."
+  },
+  {
+    "objectID": "week7/index.html#new-user-item-combination-problem",
+    "href": "week7/index.html#new-user-item-combination-problem",
+    "title": "Collaborative Filtering",
+    "section": "New User-Item Combination Problem",
+    "text": "New User-Item Combination Problem\nEven for existing users and items, the system may encounter cold-start issues when it hasn’t observed any interaction between a specific user and a specific item. This occurs frequently when a system handles a large inventory.\n\nExample:\n\nA regular customer on an e-commerce site is shown a new category of products they haven’t browsed or purchased before, leaving the system unsure of how to make recommendations within this category."
+  },
+  {
+    "objectID": "week7/index.html#content-based-filtering",
+    "href": "week7/index.html#content-based-filtering",
+    "title": "Collaborative Filtering",
+    "section": "Content-Based Filtering",
+    "text": "Content-Based Filtering\nRecommends items based on the characteristics or features of the items themselves (e.g., keywords, genres, tags) and matches them with user profiles."
+  },
+  {
+    "objectID": "week7/index.html#content-based-filtering-1",
+    "href": "week7/index.html#content-based-filtering-1",
+    "title": "Collaborative Filtering",
+    "section": "Content-Based Filtering",
+    "text": "Content-Based Filtering\nStrengths:\n\nWorks well with new users, as long as item features are known.\nProvides explainable recommendations (e.g., “You were recommended this movie because it has the same genre as another movie you liked”).\n\nWeaknesses:\n\nLimited to recommending items similar to those the user has already interacted with.\nHarder to surprise the user with novel items."
+  },
+  {
+    "objectID": "week7/index.html#model-based-methods",
+    "href": "week7/index.html#model-based-methods",
+    "title": "Collaborative Filtering",
+    "section": "Model-based methods",
+    "text": "Model-based methods\n\nAim to predict the likelihood of a user interacting with an item (e.g., rating, purchase, click) based on learned patterns from the data.\nThese models are designed to generalize from the existing user-item interactions, making predictions about future interactions"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 529 2.0 Data Mining",
+    "section": "",
+    "text": "Introduction to data mining\nClassification and Regression Trees"
+  },
+  {
+    "objectID": "index.html#week-1-june-29-2024",
+    "href": "index.html#week-1-june-29-2024",
+    "title": "STA 529 2.0 Data Mining",
+    "section": "",
+    "text": "Introduction to data mining\nClassification and Regression Trees"
+  },
+  {
+    "objectID": "index.html#week-2-july-7-2024",
+    "href": "index.html#week-2-july-7-2024",
+    "title": "STA 529 2.0 Data Mining",
+    "section": "Week 2: July 7, 2024",
+    "text": "Week 2: July 7, 2024\nMeasuring Performance\nData\nlibrary(mlbench)\nlibrary(BostonHousing)\nPractical 1: Working with missing data\nLab 1\nPractical 2: Classification\nLab 2"
+  },
+  {
+    "objectID": "index.html#week-3-july-14-2024",
+    "href": "index.html#week-3-july-14-2024",
+    "title": "STA 529 2.0 Data Mining",
+    "section": "Week 3: July 14, 2024",
+    "text": "Week 3: July 14, 2024\nRandom Forests\nPreactical 3: Introduction to tidymodels\nLab 3\nExtra reading: Click here"
+  },
+  {
+    "objectID": "index.html#week-4-august-11-2024",
+    "href": "index.html#week-4-august-11-2024",
+    "title": "STA 529 2.0 Data Mining",
+    "section": "Week 4: August 11, 2024",
+    "text": "Week 4: August 11, 2024\nAdaBoost and Gradient Boosting"
+  },
+  {
+    "objectID": "index.html#week-5-august-18-2024",
+    "href": "index.html#week-5-august-18-2024",
+    "title": "STA 529 2.0 Data Mining",
+    "section": "Week 5: August 18, 2024",
+    "text": "Week 5: August 18, 2024\nPattern Mining: Market Basket Analysis\nLab 4"
+  },
+  {
+    "objectID": "index.html#week-6-august-25-2024",
+    "href": "index.html#week-6-august-25-2024",
+    "title": "STA 529 2.0 Data Mining",
+    "section": "Week 6: August 25, 2024",
+    "text": "Week 6: August 25, 2024\nAssociation rule:\nExample 1: Lab 5.1\nExample 2: Lab 5.2\nExample 3:\nlibrary(arules)\ndata(Groceries)\nExample 3: Lab 5.3\nLab 6:\nThis question is based on “house.datamining2023.csv”. The dataset is saved on your local machine.This dataset contains information related to housing characteristics in various geographical locations.\nData\nThe variable description is as follows:\n    longitude - The geographical coordinate specifying the east-west position of a location. \n    \n    latitude - The geographical coordinate specifying the north-south position of a location. -\n   \n    housing_median_age - The median age of houses in a specific area. \n    \n    total_rooms - The total number of rooms in all housing units in a specific area.\n    \n    total_bedrooms - The total number of bedrooms in all households in a specific area.\n    \n    population - The total population of a specific area. \n    \n    households - The total number of households in a specific area. \n    \n    median_income - The median income of households in a specific area. \n    \n    median_house_value - The median value of houses in a specific area. \n    \n    ocean_proximity - The proximity of the housing unit to the ocean, categorized into different classes."
+  },
+  {
+    "objectID": "index.html#week-7-september-1-2024",
+    "href": "index.html#week-7-september-1-2024",
+    "title": "STA 529 2.0 Data Mining",
+    "section": "Week 7: September 1, 2024",
+    "text": "Week 7: September 1, 2024\nCollaborative filtering\nLab 7"
+  },
+  {
+    "objectID": "index.html#week-8-september-15-2024",
+    "href": "index.html#week-8-september-15-2024",
+    "title": "STA 529 2.0 Data Mining",
+    "section": "Week 8: September 15, 2024",
+    "text": "Week 8: September 15, 2024\nResampling\nSupport Vector Machine"
+  },
+  {
+    "objectID": "week5/index.html",
+    "href": "week5/index.html",
+    "title": "Pattern Mining: Market Basket Analysis",
+    "section": "",
+    "text": "Affinity analysis\nUnsupervised learning\nFrequent itemset mining: To discover which groups of products tend to be purchased together."
+  },
+  {
+    "objectID": "week5/index.html#market-basket-analysis",
+    "href": "week5/index.html#market-basket-analysis",
+    "title": "Pattern Mining: Market Basket Analysis",
+    "section": "",
+    "text": "Affinity analysis\nUnsupervised learning\nFrequent itemset mining: To discover which groups of products tend to be purchased together."
+  },
+  {
+    "objectID": "week5/index.html#transaction-dataset",
+    "href": "week5/index.html#transaction-dataset",
+    "title": "Pattern Mining: Market Basket Analysis",
+    "section": "Transaction dataset",
+    "text": "Transaction dataset\n\n\n\n\n\n\n\nTID\nItems\n\n\n\n\n1\ni1, i2, i5\n\n\n2\ni2, i4\n\n\n3\ni2, i3\n\n\n4\ni1, i2, i4\n\n\n5\ni1, i3\n\n\n6\ni2, i3\n\n\n7\ni1, i3\n\n\n8\ni1, i2, i3, i5\n\n\n9\ni1, i2, i3\n\n\n\n\n\n\nItem set: Set of items"
+  },
+  {
+    "objectID": "week5/index.html#suppose-we-have-100-items.-find-the-total-number-of-itemsets.",
+    "href": "week5/index.html#suppose-we-have-100-items.-find-the-total-number-of-itemsets.",
+    "title": "Pattern Mining: Market Basket Analysis",
+    "section": "Suppose we have 100 items. Find the total number of itemsets.",
+    "text": "Suppose we have 100 items. Find the total number of itemsets."
+  },
+  {
+    "objectID": "week5/index.html#association-rule",
+    "href": "week5/index.html#association-rule",
+    "title": "Pattern Mining: Market Basket Analysis",
+    "section": "Association rule",
+    "text": "Association rule\n\\[ Milk \\Rightarrow Bread \\text{ [Support = 2%, Confidence = 60%]}\\]\n\nIF (Antecedent)\nTHEN (Consequent)\nSupport and Confidence measures the strength of association between antecedent and consequent itemset."
+  },
+  {
+    "objectID": "week5/index.html#apriori-algorithm",
+    "href": "week5/index.html#apriori-algorithm",
+    "title": "Pattern Mining: Market Basket Analysis",
+    "section": "Apriori algorithm",
+    "text": "Apriori algorithm\nDesired support count: 2 (22%)\nDesired confidence: 70%"
+  },
+  {
+    "objectID": "week5/index.html#transaction-dataset-1",
+    "href": "week5/index.html#transaction-dataset-1",
+    "title": "Pattern Mining: Market Basket Analysis",
+    "section": "Transaction dataset",
+    "text": "Transaction dataset\n\n\n\n\n\n\n\nTID\nItems\n\n\n\n\n1\ni1, i2, i5\n\n\n2\ni2, i4\n\n\n3\ni2, i3\n\n\n4\ni1, i2, i4\n\n\n5\ni1, i3\n\n\n6\ni2, i3\n\n\n7\ni1, i3\n\n\n8\ni1, i2, i3, i5\n\n\n9\ni1, i2, i3"
+  },
+  {
+    "objectID": "week5/index.html#step-2",
+    "href": "week5/index.html#step-2",
+    "title": "Pattern Mining: Market Basket Analysis",
+    "section": "Step 2:",
+    "text": "Step 2:\nSelect itemsets where the minimum support count is 2."
+  },
+  {
+    "objectID": "week5/index.html#step-3",
+    "href": "week5/index.html#step-3",
+    "title": "Pattern Mining: Market Basket Analysis",
+    "section": "Step 3:",
+    "text": "Step 3:\nGenerate Associate Rules: Compute confidence and lift"
+  },
+  {
+    "objectID": "week5/index.html#confidence-and-lift",
+    "href": "week5/index.html#confidence-and-lift",
+    "title": "Pattern Mining: Market Basket Analysis",
+    "section": "Confidence and Lift",
+    "text": "Confidence and Lift\nIn-class demonstration"
+  }
+]

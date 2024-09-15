@@ -96,10 +96,13 @@ The variable description is as follows:
 
 ## Week 7: September 1, 2024
 
-
 [Collaborative filtering](./week7/index.html)
 
 [Lab 7](./Lab7/cf.R)
 
-[Support Vector Machine](https://thiyanga-datamining.netlify.app/svm)
+## Week 8: September 15, 2024
 
+
+[Resampling](https://thiyanga-datamining.netlify.app/L5.pdf)
+
+[Support Vector Machine](https://thiyanga-datamining.netlify.app/svm)
