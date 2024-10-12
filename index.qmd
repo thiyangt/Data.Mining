@@ -102,7 +102,14 @@ The variable description is as follows:
 
 ## Week 8: September 15, 2024
 
-
 [Resampling](https://thiyanga-datamining.netlify.app/L5.pdf)
 
 [Support Vector Machine](https://thiyanga-datamining.netlify.app/svm)
+
+## Week 9: October 6, 2024
+
+Mid semester project presentation and discussing errors
+
+## Week 10: October 13, 2024
+
+[Cluster Analysis](https://thiyanga-datamining.netlify.app/clustering)
