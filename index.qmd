@@ -115,3 +115,11 @@ Mid semester project presentation and discussing errors
 [Cluster Analysis](https://thiyanga-datamining.netlify.app/clustering)
 
 Dataset: https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-02-11#data-dictionary
+
+Develop a model to predict  **which actual hotel stays included children and/or babies**
+
+```r
+library(readr)
+hotels <- 
+  read_csv("https://tidymodels.org/start/case-study/hotels.csv") 
+```
