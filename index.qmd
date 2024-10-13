@@ -113,3 +113,5 @@ Mid semester project presentation and discussing errors
 ## Week 10: October 13, 2024
 
 [Cluster Analysis](https://thiyanga-datamining.netlify.app/clustering)
+
+Dataset: https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-02-11#data-dictionary
